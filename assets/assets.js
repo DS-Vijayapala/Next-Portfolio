@@ -1,14 +1,19 @@
 
-import userImage from './assets/user.png';
-import Css from './assets/css.png';
-import Html from './assets/html.png';
-import Js from './assets/js.png';
-import React from 'react';
-import Node from './assets/node.png';
+import userImage from './logo.png';
+import logo from '@/assets/logo.png';
+import rightArrow from '@/assets/right.png';
+import moon from '@/assets/moon.png';
+import sun from '@/assets/sun.png';
+import menu_icon from '@/assets/menu_icon.png';
 
 
 export const assets = {
-    userImage
+    userImage,
+    logo,
+    rightArrow,
+    moon,
+    sun,
+    menu_icon,
 }
 
 export const workData = [
