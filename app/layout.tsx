@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outFit.className} ${ovo.className} antialiased`}
+        className={`${outFit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden`}
       >
         {children}
       </body>

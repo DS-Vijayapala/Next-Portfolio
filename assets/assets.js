@@ -6,6 +6,7 @@ import moon from '@/assets/moon.png';
 import sun from '@/assets/sun.png';
 import menu_icon from '@/assets/menu_icon.png';
 import close_icon from '@/assets/close_icon.png';
+import default_image from '@/assets/default_image.png';
 
 
 export const assets = {
@@ -16,6 +17,7 @@ export const assets = {
     sun,
     menu_icon,
     close_icon,
+    default_image,
 }
 
 export const workData = [
