@@ -5,6 +5,7 @@ import rightArrow from '@/assets/right.png';
 import moon from '@/assets/moon.png';
 import sun from '@/assets/sun.png';
 import menu_icon from '@/assets/menu_icon.png';
+import close_icon from '@/assets/close_icon.png';
 
 
 export const assets = {
@@ -14,6 +15,7 @@ export const assets = {
     moon,
     sun,
     menu_icon,
+    close_icon,
 }
 
 export const workData = [
