@@ -7,6 +7,16 @@ import sun from '@/assets/sun.png';
 import menu_icon from '@/assets/menu_icon.png';
 import close_icon from '@/assets/close_icon.png';
 import default_image from '@/assets/default_image.png';
+import project_icon from '@/assets/project_icon.png';
+import language_icon from '@/assets/language_icon.png';
+import html from '@/assets/html.png';
+import css from '@/assets/css.png';
+import js from '@/assets/js.png';
+import react from '@/assets/react.png';
+import git from '@/assets/git.png';
+import github from '@/assets/github.png';
+import tailwindcss from '@/assets/tailwindcss.png';
+import nextjs from '@/assets/nextjs.png';
 
 
 export const assets = {
@@ -18,7 +28,46 @@ export const assets = {
     menu_icon,
     close_icon,
     default_image,
+    project_icon,
+    language_icon,
+    html,
+    css,
+    js,
+    react,
+    git,
+    github,
+    tailwindcss,
+    nextjs,
+
 }
+
+export const toolsIcon = [
+
+    assets.html,
+    assets.css,
+    assets.js,
+    assets.nextjs,
+    assets.react,
+    assets.git,
+    assets.github,
+    assets.tailwindcss,
+
+]
+
+export const infoData = [
+    {
+        icon: language_icon,
+        iconDark: language_icon,
+        title: 'Languages',
+        description: 'HTml, CSS, JavaScript, React, Node.js, Express.js, MongoDB',
+    },
+    {
+        icon: project_icon,
+        iconDark: project_icon,
+        title: 'Projects',
+        description: 'Click here to see my projects',
+    }
+]
 
 export const workData = [
     {
