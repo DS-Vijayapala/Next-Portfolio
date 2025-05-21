@@ -17,6 +17,9 @@ import git from '@/assets/git.png';
 import github from '@/assets/github.png';
 import tailwindcss from '@/assets/tailwindcss.png';
 import nextjs from '@/assets/nextjs.png';
+import frontend from '@/assets/frontend.png';
+import backenddev from '@/assets/backenddev.png';
+
 
 
 export const assets = {
@@ -38,8 +41,35 @@ export const assets = {
     github,
     tailwindcss,
     nextjs,
+    frontend,
+    backenddev,
 
 }
+
+export const serviceData = [
+
+    {
+        icon: assets.frontend,
+        title: 'Frontend Development',
+        description: `I am a frontend developer with experience in building responsive and user-friendly websites.`,
+        link: '#',
+    },
+
+    {
+        icon: assets.backenddev,
+        title: 'Backend Development',
+        description: `I am a backend developer with experience in building scalable and secure web applications.`,
+        link: '#',
+    },
+
+    {
+        icon: assets.frontend,
+        title: 'UI/UX Design',
+        description: `I am a UI/UX designer with experience in creating user-centered designs for web and mobile applications.`,
+        link: '#',
+    }
+
+]
 
 export const toolsIcon = [
 
