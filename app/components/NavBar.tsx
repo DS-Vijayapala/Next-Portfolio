@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
@@ -15,7 +15,7 @@ function NavBar() {
     return (
         <>
             <nav className='w-full fixed px-5 lg:px-8 xl:px-[8%] flex items-center 
-            justify-between z-10'>
+            justify-between z-10  backdrop-blur-md'>
 
                 <a href="#top">
 
@@ -26,7 +26,7 @@ function NavBar() {
                 {/* Desktop Menu */}
 
                 <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full 
-                px-12 py-3 bg-white shadow-sm bg-opacity-50'>
+                px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-lg '>
 
                     <li><a href="#top">Home</a></li>
 
