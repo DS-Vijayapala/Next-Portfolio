@@ -19,6 +19,11 @@ import tailwindcss from '@/assets/tailwindcss.png';
 import nextjs from '@/assets/nextjs.png';
 import frontend from '@/assets/frontend.png';
 import backenddev from '@/assets/backenddev.png';
+import blogapp from '@/assets/blogapp.png';
+import ecom from '@/assets/ecom.png';
+import taskapp from '@/assets/taskapp.png';
+import socialapp from '@/assets/socialapp.png';
+import sendicon from '@/assets/sendicon.png';
 
 
 
@@ -43,8 +48,44 @@ export const assets = {
     nextjs,
     frontend,
     backenddev,
+    sendicon,
+    blogapp,
+    ecom,
+    taskapp,
+    socialapp,
 
 }
+
+
+export const Projects = [
+
+    {
+        title: 'E-commerce Website',
+        description: `An e-commerce website built with React and Node.js.`,
+        bgImage: ecom
+    },
+
+    {
+        title: 'Task Management App',
+        description: `A task management app built with React and Next js.`,
+        bgImage: taskapp
+
+    },
+
+    {
+        title: 'Blog Website',
+        description: `A blog website built with Next.js and MongoDB.`,
+        bgImage: blogapp
+
+    },
+
+    {
+        title: 'Social Media App',
+        description: `A social media app built with React Native and Firebase.`,
+        bgImage: socialapp
+
+    },
+]
 
 export const serviceData = [
 
