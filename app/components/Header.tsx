@@ -31,10 +31,10 @@ function Header() {
             {/* Typing Animation */}
             <TypeAnimation
                 sequence={[
-                    'Full Stack Developer', 3500,
-                    'React & Next.js Developer', 3500,
+                    'Full-Stack Web Developer', 3500,
                     'MERN Stack Developer', 3500,
-                    'Web Developer', 3500,
+                    'React / Next.js Developer', 3500,
+
                 ]}
                 wrapper="h1"
                 speed={25}

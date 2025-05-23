@@ -24,6 +24,9 @@ import ecom from '@/assets/ecom.png';
 import taskapp from '@/assets/taskapp.png';
 import socialapp from '@/assets/socialapp.png';
 import sendicon from '@/assets/sendicon.png';
+import mail_icon from '@/assets/mail_icon.png';
+import linkedin from '@/assets/linkedin.png';
+import x_logo from '@/assets/x_logo.png';
 
 
 
@@ -53,6 +56,9 @@ export const assets = {
     ecom,
     taskapp,
     socialapp,
+    mail_icon,
+    linkedin,
+    x_logo,
 
 }
 

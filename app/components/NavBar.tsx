@@ -26,7 +26,7 @@ function NavBar() {
                 {/* Desktop Menu */}
 
                 <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full 
-                px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-lg '>
+                px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-lg nav1 '>
 
                     <li><a href="#top">Home</a></li>
 
@@ -68,7 +68,7 @@ function NavBar() {
 
                 {/* Mobile Slide Menu */}
                 <ul className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed 
-                    top-0 bottom-0 right-0 w-64 z-50 h-screen bg-rose-50 
+                    top-0 bottom-0 right-0 w-64 z-50 h-screen bg-white backdrop-blur-2xl
                     transition-transform duration-500 
                     ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
 

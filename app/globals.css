@@ -3,3 +3,26 @@
 * {
     font-family: 'outfit';
 }
+
+
+.nav1 a {
+    text-decoration: none;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.nav1 a::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #0ac73f;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav1 a:hover::after {
+    transform: scaleX(1);
+}
