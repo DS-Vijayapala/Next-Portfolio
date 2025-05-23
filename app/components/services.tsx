@@ -67,6 +67,15 @@ function Services() {
 
             </div>
 
+            <a
+                href=""
+                className="flex items-center justify-center gap-2 text-sm font-medium text-slate-700 border border-slate-400
+                                rounded-full py-3 px-8 mx-auto mt-16 hover:bg-green-100 hover:text-gray-700 transition duration-300 w-max"
+            >
+                View Projects
+                <Image src={assets.rightArrow} alt="right arrow" className="w-4" />
+            </a>
+
         </div>
 
     );

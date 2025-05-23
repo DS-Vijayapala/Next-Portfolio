@@ -48,7 +48,7 @@ function NavBar() {
 
                     <a
                         className='hidden lg:flex items-center gap-3 px-10 border
-                         border-gray-500 rounded-full ml-4'
+                         border-gray-500 rounded-full ml-4 hover:bg-green-200 duration-500'
                         href="#contact"
                     >
                         Contact
