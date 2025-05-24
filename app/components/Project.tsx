@@ -8,7 +8,7 @@ function Project() {
 
         <div
             id="Projects"
-            className="w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2 bg-white text-slate-800"
+            className="w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2 text-slate-800"
         >
 
             {/* Header */}

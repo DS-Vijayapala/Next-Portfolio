@@ -27,6 +27,7 @@ import sendicon from '@/assets/sendicon.png';
 import mail_icon from '@/assets/mail_icon.png';
 import linkedin from '@/assets/linkedin.png';
 import x_logo from '@/assets/x_logo.png';
+import menu_dark from '@/assets/menu_dark.png';
 
 
 
@@ -59,6 +60,7 @@ export const assets = {
     mail_icon,
     linkedin,
     x_logo,
+    menu_dark
 
 }
 

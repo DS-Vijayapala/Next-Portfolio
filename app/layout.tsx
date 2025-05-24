@@ -19,14 +19,24 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+
 }>) {
+
   return (
+
     <html lang="en" className="scroll-smooth">
+
       <body
-        className={`${outFit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden`}
+        className={`${outFit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden 
+        dark:bg-gray-900 dark:text-white`}
       >
+
         {children}
+
       </body>
+
     </html>
+
   );
+
 }

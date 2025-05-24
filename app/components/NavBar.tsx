@@ -12,6 +12,39 @@ function NavBar() {
 
     const closeMenu = () => setMenuOpen(false)
 
+    const [isDarkMode, setIsDarkMode] = React.useState(true);
+
+    useEffect(() => {
+
+        if (localStorage.theme === "dark" || (!("theme" in localStorage)
+            && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+
+            setIsDarkMode(true);
+
+        } else {
+
+            setIsDarkMode(false);
+
+        }
+
+    }, []);
+
+    useEffect(() => {
+
+        if (isDarkMode) {
+
+            document.documentElement.classList.add("dark");
+            localStorage.theme = "dark";
+
+        } else {
+
+            document.documentElement.classList.remove("dark");
+            localStorage.theme = "";
+
+        }
+
+    }, [isDarkMode]);
+
     return (
         <>
             <nav className='w-full fixed px-5 lg:px-8 xl:px-[8%] flex items-center 
@@ -26,7 +59,7 @@ function NavBar() {
                 {/* Desktop Menu */}
 
                 <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full 
-                px-12 py-3 bg-white shadow-sm bg-opacity-50 backdrop-blur-lg nav1 '>
+                px-12 py-3 shadow-sm bg-opacity-50 backdrop-blur-lg nav1 dark:bg-gray-700'>
 
                     <li><a href="#top">Home</a></li>
 
@@ -42,13 +75,16 @@ function NavBar() {
 
                 <div className='flex items-center gap-4'>
 
-                    <button>
-                        <Image src={assets.moon} alt="moon" className='w-6' />
+                    {/* Dark Mode Toggle Button */}
+
+                    <button onClick={() => { setIsDarkMode(prev => !prev) }}
+                        className='cursor-pointer flex items-center justify-center'>
+                        <Image src={isDarkMode ? assets.sun : assets.moon} alt="moon" className='w-6' />
                     </button>
 
                     <a
                         className='hidden lg:flex items-center gap-3 px-10 border
-                         border-gray-500 rounded-full ml-4 hover:bg-green-200 duration-500'
+                         border-gray-500 rounded-full ml-4 hover:bg-green-200 duration-500 dark:text-gray-200 dark:hover:bg-gray-700'
                         href="#contact"
                     >
                         Contact
@@ -60,7 +96,7 @@ function NavBar() {
 
                     <button className='block md:hidden ml-3' onClick={openMenu}>
 
-                        <Image src={assets.menu_icon} alt="menu" className='w-6 cursor-pointer' />
+                        <Image src={isDarkMode ? assets.menu_dark : assets.menu_icon} alt="menu" className='w-6 cursor-pointer' />
 
                     </button>
 
@@ -69,7 +105,7 @@ function NavBar() {
                 {/* Mobile Slide Menu */}
                 <ul className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed 
                     top-0 bottom-0 right-0 w-64 z-50 h-screen bg-white backdrop-blur-2xl
-                    transition-transform duration-500 
+                    transition-transform duration-500 dark:bg-gray-800 dark:text-gray-200
                     ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
 
                     <div className='absolute top-6 right-6' onClick={closeMenu}>

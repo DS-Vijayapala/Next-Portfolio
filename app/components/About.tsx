@@ -6,7 +6,8 @@ function About() {
 
     return (
 
-        <section id="about" className="w-full px-4 sm:px-10 lg:px-[12%] py-25 scroll-mt-2 bg-white text-slate-800">
+        <section id="about" className="w-full px-4 sm:px-10 lg:px-[12%] py-25 scroll-mt-2
+         text-slate-800">
 
             <div className="text-center mb-12">
 

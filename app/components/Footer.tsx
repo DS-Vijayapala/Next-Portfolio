@@ -6,7 +6,7 @@ function Footer() {
 
     return (
 
-        <footer className="mt-20 border-t border-gray-200 bg-white text-slate-800">
+        <footer className="mt-20 border-t border-gray-200 text-slate-800">
 
             <div className="max-w-6xl mx-auto px-4 py-8 sm:flex sm:items-center sm:justify-between 
             text-center sm:text-left">

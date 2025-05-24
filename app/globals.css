@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 * {
     font-family: 'outfit';
 }
@@ -7,7 +9,7 @@
 
 .nav1 a {
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 5px 5px;
     position: relative;
 }
 

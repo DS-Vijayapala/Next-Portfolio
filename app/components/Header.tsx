@@ -39,7 +39,8 @@ function Header() {
                 wrapper="h1"
                 speed={25}
                 repeat={Infinity}
-                className="text-xl sm:text-3xl lg:text-6xl  text-gray-600 leading-tight"
+                className="text-xl sm:text-3xl lg:text-6xl  text-gray-600 leading-tight
+                dark:text-gray-300"
             />
 
 
