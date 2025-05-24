@@ -22,7 +22,7 @@ function Header() {
             </div>
 
             {/* Greeting & Name */}
-            <h3 className="text-lg sm:text-xl md:text-2xl text-gray-600">
+            <h3 className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300">
 
                 👋 Hello, I'm <span className="font-semibold text-green-700">Dineth</span>
 
@@ -45,7 +45,7 @@ function Header() {
 
 
             {/* Tech Stack */}
-            <p className="text-sm sm:text-base text-gray-700 max-w-xl">
+            <p className="text-sm sm:text-base text-gray-700 max-w-xl dark:text-gray-300">
                 Specializing in building scalable web applications with the
                 <span className="font-medium text-green-700"> MERN Stack </span> – MongoDB, Express.js, React / Next.js, and Node.js.
                 I love crafting user-friendly interfaces and writing efficient backend code.
@@ -70,7 +70,7 @@ function Header() {
 
                     href="#Projects"
                     className="text-gray-700 border border-green-600 px-6 py-3 rounded-full
-                     hover:bg-green-200 transition"
+                     hover:bg-green-200 transition duration-500"
                 >
                     View Projects
 
