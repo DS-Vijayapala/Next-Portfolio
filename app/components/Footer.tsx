@@ -6,36 +6,46 @@ function Footer() {
 
     return (
 
-        <div className='mt-20'>
+        <footer className="mt-20 border-t border-gray-200 bg-white text-slate-800">
 
-            <div className='text-center sm:flex items-center justify-between border-t
-            border-gray-400 mx-[10%] mt-10 py-6'>
+            <div className="max-w-6xl mx-auto px-4 py-8 sm:flex sm:items-center sm:justify-between 
+            text-center sm:text-left">
 
-                <p>add copy write text</p>
+                {/* Copyright */}
 
-                <div className='w-max flex items-center gap-2 mx-auto'>
+                <p className="text-sm mb-4 sm:mb-0 text-gray-600">
 
-                    <Image
+                    &copy; {new Date().getFullYear()}All rights reserved.
 
-                        src={assets.mail_icon}
-                        alt="logo"
-                        className='w-6 '
-                    />
-                    example@example.com
+                </p>
+
+                {/* Email */}
+
+                <div className="flex items-center justify-center gap-2 mb-4 sm:mb-0 text-gray-700">
+
+                    <Image src={assets.mail_icon} alt="Email icon" className="w-5" />
+
+                    <a href="mailto:example@example.com" className="hover:underline">
+                        example@example.com
+                    </a>
 
                 </div>
 
-                <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
+                {/* Social Links */}
 
-                    <li >
+                <ul className="flex items-center justify-center gap-6 mt-2 sm:mt-0">
 
-                        <a className='w-max flex items-center gap-2 mx-auto' target='_blank' href="#">
+                    <li>
 
-                            <Image
-                                src={assets.github}
-                                alt="logo"
-                                className='w-4 bg-white '
-                            />Github
+                        <a
+                            href="#"
+                            target="_blank"
+                            className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition"
+                        >
+
+                            <Image src={assets.github} alt="GitHub" className="w-5" />
+
+                            <span className="text-sm">GitHub</span>
 
                         </a>
 
@@ -43,13 +53,15 @@ function Footer() {
 
                     <li>
 
-                        <a className='w-max flex items-center gap-2 mx-auto' target='_blank' href="#">
+                        <a
+                            href="#"
+                            target="_blank"
+                            className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition"
+                        >
 
-                            <Image
-                                src={assets.linkedin}
-                                alt="logo"
-                                className='w-4 '
-                            />LinkedIn
+                            <Image src={assets.linkedin} alt="LinkedIn" className="w-5" />
+
+                            <span className="text-sm">LinkedIn</span>
 
                         </a>
 
@@ -57,14 +69,15 @@ function Footer() {
 
                     <li>
 
-                        <a className='w-max flex items-center gap-2 mx-auto' target='_blank' href="#">
+                        <a
+                            href="#"
+                            target="_blank"
+                            className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition"
+                        >
 
-                            <Image
+                            <Image src={assets.x_logo} alt="Twitter/X" className="w-5" />
 
-                                src={assets.x_logo}
-                                alt="logo"
-                                className='w-4 '
-                            />Twitter
+                            <span className="text-sm">Twitter</span>
 
                         </a>
 
@@ -74,9 +87,11 @@ function Footer() {
 
             </div>
 
-        </div>
+        </footer>
 
-    )
+    );
+
 }
 
-export default Footer
+
+export default Footer;
