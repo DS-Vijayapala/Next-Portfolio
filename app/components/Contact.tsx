@@ -68,7 +68,7 @@ function Contact() {
 
                 {/* Name & Email */}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 m-10">
 
                     <input
                         type="text"
@@ -96,18 +96,22 @@ function Contact() {
 
                 {/* Message */}
 
-                <textarea
-                    rows={5}
-                    name="message"
-                    placeholder="Your Message"
-                    className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
+                <div className='m-10'>
+
+                    <textarea
+                        rows={5}
+                        name="message"
+                        placeholder="Your Message"
+                        className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
                                     focus:border-green-500 focus:ring-green-300 focus:outline-none
                                     bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
                                     dark:text-gray-100 shadow-sm transition-all duration-300"
-                    required
-                >
+                        required
+                    >
 
-                </textarea>
+                    </textarea>
+
+                </div>
 
                 {/* Submit Button */}
 

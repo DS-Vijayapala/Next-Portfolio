@@ -69,8 +69,8 @@ function Header() {
                 <a
 
                     href="#Projects"
-                    className="text-gray-700 border border-green-600 px-6 py-3 rounded-full
-                     hover:bg-green-200 transition duration-500"
+                    className="text-gray-700 border-2 border-green-600 px-6 py-3 rounded-full
+                     hover:bg-green-200 transition duration-500 dark:text-gray-300 dark:border-green-500 dark:hover:bg-gray-800"
                 >
                     View Projects
 

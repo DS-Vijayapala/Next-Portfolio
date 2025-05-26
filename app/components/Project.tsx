@@ -29,7 +29,7 @@ function Project() {
 
             {/* Project Cards Grid */}
 
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6 my-10">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6 m-10">
 
                 {Projects.map(({ title, description, bgImage }, index) => (
 

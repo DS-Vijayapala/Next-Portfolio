@@ -29,7 +29,7 @@ function Services() {
 
             <div
                 className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))]
-                gap-8 my-10"
+                gap-8 m-10"
             >
                 {serviceData.map(({ icon, title, description, link }, index) => (
 
