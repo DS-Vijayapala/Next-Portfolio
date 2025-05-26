@@ -17,9 +17,9 @@ function Project() {
 
                 <h4 className="text-green-600 text-lg font-Ovo">My Latest Works</h4>
 
-                <h2 className="text-2xl sm:text-4xl font-bold mt-2">Projects</h2>
+                <h2 className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Projects</h2>
 
-                <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base">
+                <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
 
                     I provide a wide range of modern development services, focusing on performance,
                     accessibility, and design excellence.
@@ -47,12 +47,13 @@ function Project() {
                         <div
                             className="absolute bottom-5 left-1/2 -translate-x-1/2 w-11/12 bg-white/90 backdrop-blur-xl
                                         p-4 rounded-lg flex items-center justify-between shadow-md transition-all duration-300
-                                        group-hover:bottom-7 hover:bg-green-200"
+                                        group-hover:bottom-7 hover:bg-green-200 dark:bg-gray-900 dark:border-none dark:backdrop-blur-md
+                                         dark:hover:bg-gray-800 dark:text-gray-300"
                         >
                             <div>
 
-                                <h3 className="font-semibold text-lg text-slate-800">{title}</h3>
-                                <p className="text-sm text-gray-600">{description}</p>
+                                <h3 className="font-semibold text-lg text-slate-800 dark:text-gray-300">{title}</h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>
 
                             </div>
 
@@ -76,10 +77,12 @@ function Project() {
             <a
                 href=""
                 className="flex items-center justify-center gap-2 text-sm font-medium text-slate-700 border border-slate-400
-                    rounded-full py-3 px-8 mx-auto mt-16 hover:bg-green-100 hover:text-gray-700 transition duration-300 w-max"
+                    rounded-full py-3 px-8 mx-auto mt-16 hover:bg-green-100 hover:text-gray-700 dark:text-green-500
+                    transition duration-300 w-max dark:bg-white/25 dark:border-none dark:backdrop-blur-md dark:hover:bg-gray-700 
+                    dark:hover:text-green-500"
             >
                 Show All
-                <Image src={assets.rightArrow} alt="right arrow" className="w-4" />
+
             </a>
 
         </div>
