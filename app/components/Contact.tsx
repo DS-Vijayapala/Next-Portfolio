@@ -52,9 +52,9 @@ function Contact() {
 
                 <h4 className="text-green-600 text-lg font-Ovo">Contact Me</h4>
 
-                <h2 className="text-2xl sm:text-4xl font-bold mt-2">Get In Touch</h2>
+                <h2 className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Get In Touch</h2>
 
-                <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base">
+                <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
 
                     Have a project or idea in mind? Feel free to reach out - I’d love to hear from you.
 
@@ -74,8 +74,10 @@ function Contact() {
                         type="text"
                         name="name"
                         placeholder="Your Name"
-                        className="p-3 w-full rounded-md border-2 border-gray-300 focus:border-green-500
-                                 focus:ring-green-300 focus:outline-none shadow-sm transition-all duration-300"
+                        className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
+                                    focus:border-green-500 focus:ring-green-300 focus:outline-none
+                                    bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
+                                    dark:text-gray-100 shadow-sm transition-all duration-300"
                         required
                     />
 
@@ -83,8 +85,10 @@ function Contact() {
                         type="email"
                         name="email"
                         placeholder="Your Email"
-                        className="p-3 w-full rounded-md border-2 border-gray-300 focus:border-green-500
-                                 focus:ring-green-300 focus:outline-none shadow-sm transition-all duration-300"
+                        className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
+                                    focus:border-green-500 focus:ring-green-300 focus:outline-none
+                                    bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
+                                    dark:text-gray-100 shadow-sm transition-all duration-300"
                         required
                     />
 
@@ -96,8 +100,10 @@ function Contact() {
                     rows={5}
                     name="message"
                     placeholder="Your Message"
-                    className="w-full p-4 rounded-md border-2 border-gray-300 focus:border-green-500
-                              focus:ring-green-300 focus:outline-none shadow-sm transition-all duration-300 resize-none"
+                    className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
+                                    focus:border-green-500 focus:ring-green-300 focus:outline-none
+                                    bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
+                                    dark:text-gray-100 shadow-sm transition-all duration-300"
                     required
                 >
 
@@ -108,7 +114,7 @@ function Contact() {
                 <button
                     type="submit"
                     className="flex items-center gap-2 bg-green-600 text-white px-8 py-3 rounded-full
-                             hover:bg-green-700 transition-all duration-300 shadow-md mx-auto"
+                                hover:bg-green-700 transition-all duration-300 shadow-md mx-auto"
                 >
 
                     Submit Now
