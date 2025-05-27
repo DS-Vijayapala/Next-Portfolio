@@ -1,12 +1,16 @@
 import React from 'react'
 import { assets, serviceData, Projects } from '@/assets/assets'
 import Image from 'next/image'
+import { motion } from "motion/react"
 
 function Project() {
 
     return (
 
-        <div
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
             id="Projects"
             className="w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2 text-slate-800"
         >
@@ -15,25 +19,43 @@ function Project() {
 
             <div className="text-center mb-12">
 
-                <h4 className="text-green-600 text-lg font-Ovo">My Latest Works</h4>
+                <motion.h4
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className="text-green-600 text-lg font-Ovo">My Latest Works</motion.h4>
 
-                <h2 className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Projects</h2>
+                <motion.h2
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.5 }}
+                    className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Projects</motion.h2>
 
-                <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
+                <motion.p
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
 
                     I provide a wide range of modern development services, focusing on performance,
                     accessibility, and design excellence.
-                </p>
+                </motion.p>
 
             </div>
 
             {/* Project Cards Grid */}
 
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6 m-10">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.6 }}
+                className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6 m-10">
 
                 {Projects.map(({ title, description, bgImage }, index) => (
 
-                    <div
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.3 }}
                         key={index}
                         className="aspect-square bg-no-repeat bg-cover bg-center rounded-xl shadow-sm relative overflow-hidden group"
                     >
@@ -65,16 +87,19 @@ function Project() {
 
                         </div>
 
-                    </div>
+                    </motion.div>
 
                 ))}
 
-            </div>
+            </motion.div>
 
 
             {/* Show All Button */}
 
-            <a
+            <motion.a
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 1.1, duration: 0.5 }}
                 href=""
                 className="flex items-center justify-center gap-2 text-sm font-medium text-slate-700 border border-slate-400
                     rounded-full py-3 px-8 mx-auto mt-16 hover:bg-green-100 hover:text-gray-700 dark:text-green-500
@@ -83,9 +108,9 @@ function Project() {
             >
                 Show All
 
-            </a>
+            </motion.a>
 
-        </div>
+        </motion.div>
 
     );
 
