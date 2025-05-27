@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
+import { motion } from "motion/react"
 
 function Contact() {
 
@@ -41,7 +42,10 @@ function Contact() {
 
     return (
 
-        <div
+        <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
             id="contact"
             className="w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2  text-slate-800"
         >
@@ -50,27 +54,46 @@ function Contact() {
 
             <div className="text-center mb-12">
 
-                <h4 className="text-green-600 text-lg font-Ovo">Contact Me</h4>
+                <motion.h4
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className="text-green-600 text-lg font-Ovo">Contact Me</motion.h4>
 
-                <h2 className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Get In Touch</h2>
+                <motion.h2
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                    className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Get In Touch</motion.h2>
 
-                <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
+                <motion.p
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.5 }}
+                    className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
 
                     Have a project or idea in mind? Feel free to reach out - I’d love to hear from you.
 
-                </p>
+                </motion.p>
 
             </div>
 
             {/* Contact Form */}
 
-            <form onSubmit={onSubmit} className="max-w-2xl mx-auto space-y-6">
+            <motion.form
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.9, duration: 0.5 }}
+                onSubmit={onSubmit} className="max-w-2xl mx-auto space-y-6">
 
                 {/* Name & Email */}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 m-10">
 
-                    <input
+                    <motion.input
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 1.2, duration: 0.3 }}
                         type="text"
                         name="name"
                         placeholder="Your Name"
@@ -81,7 +104,10 @@ function Contact() {
                         required
                     />
 
-                    <input
+                    <motion.input
+                        initial={{ x: 50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 1.1, duration: 0.3 }}
                         type="email"
                         name="email"
                         placeholder="Your Email"
@@ -98,7 +124,10 @@ function Contact() {
 
                 <div className='m-10'>
 
-                    <textarea
+                    <motion.textarea
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 1.3, duration: 0.3 }}
                         rows={5}
                         name="message"
                         placeholder="Your Message"
@@ -109,13 +138,15 @@ function Contact() {
                         required
                     >
 
-                    </textarea>
+                    </motion.textarea>
 
                 </div>
 
                 {/* Submit Button */}
 
-                <button
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                     type="submit"
                     className="flex items-center gap-2 bg-green-600 text-white px-8 py-3 rounded-full
                                 hover:bg-green-700 transition-all duration-300 shadow-md mx-auto"
@@ -124,7 +155,7 @@ function Contact() {
                     Submit Now
                     <Image src={assets.rightArrow} alt="send" className="w-5" />
 
-                </button>
+                </motion.button>
 
                 {/* Result */}
 
@@ -132,9 +163,9 @@ function Contact() {
                     <p className="text-center text-sm text-green-600 mt-4">{result}</p>
                 )}
 
-            </form>
+            </motion.form>
 
-        </div>
+        </motion.div>
 
     );
 
