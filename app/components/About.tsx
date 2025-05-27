@@ -1,37 +1,63 @@
 import { assets, infoData, toolsIcon } from '@/assets/assets'
 import React from 'react'
 import Image from 'next/image'
+import { motion } from "motion/react"
 
 function About(isDarkMode: boolean) {
 
     return (
 
-        <section id="about" className="w-full px-4 sm:px-10 lg:px-[12%] py-25 scroll-mt-2
+        <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            id="about"
+            className="w-full px-4 sm:px-10 lg:px-[12%] py-25 scroll-mt-2
          text-slate-800">
 
             <div className="text-center mb-12">
 
-                <h4 className="text-green-600 text-lg font-Ovo">Introduction</h4>
+                <motion.h4
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="text-green-600 text-lg font-Ovo">Introduction</motion.h4>
 
-                <h2 className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">About Me</h2>
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">About Me</motion.h2>
 
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center gap-14">
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
+                className="flex flex-col lg:flex-row items-center gap-14">
 
                 {/* Profile Image */}
 
-                <div className='w-64 sm:w-80 rounded-3xl max-w-none'>
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6 }}
+                    className='w-64 sm:w-80 rounded-3xl max-w-none'>
 
                     <Image src={assets.default_image}
                         alt='user'
                         className='w-full rounded-3xl' />
 
-                </div>
+                </motion.div>
 
                 {/* Text Content */}
 
-                <div className="flex-1">
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="flex-1">
 
                     <p className="mb-10 max-w-2xl font-mono text-base sm:text-lg 
                     leading-relaxed text-slate-700 dark:text-gray-300">
@@ -45,7 +71,12 @@ function About(isDarkMode: boolean) {
 
                     {/* Info Cards */}
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-3xl">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 1 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-3xl">
+
 
                         {infoData.map(({ icon, iconDark, title, description }, index) => (
 
@@ -66,13 +97,21 @@ function About(isDarkMode: boolean) {
 
                         ))}
 
-                    </div>
+                    </motion.div>
 
                     {/* Tools Section */}
 
-                    <h4 className="text-xl font-semibold text-slate-800 mt-10 mb-4 dark:text-gray-300">Tools</h4>
+                    <motion.h4
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 1.3 }}
+                        className="text-xl font-semibold text-slate-800 mt-10 mb-4 dark:text-gray-300">Tools</motion.h4>
 
-                    <ul className="flex flex-wrap items-center gap-4">
+                    <motion.ul
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 1.5 }}
+                        className="flex flex-wrap items-center gap-4">
 
                         {toolsIcon.map((tool, index) => (
 
@@ -89,13 +128,13 @@ function About(isDarkMode: boolean) {
 
                         ))}
 
-                    </ul>
+                    </motion.ul>
 
-                </div>
+                </motion.div>
 
-            </div>
+            </motion.div>
 
-        </section>
+        </motion.section>
 
     )
 }
