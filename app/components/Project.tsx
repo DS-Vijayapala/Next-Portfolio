@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets, serviceData, Projects } from '@/assets/assets'
 import Image from 'next/image'
 import { motion } from "motion/react"
+import { ProjectModal } from '@/app/components/ProjectModel'
 
 function Project() {
+
+    const [showModal, setShowModal] = useState(false);
 
     return (
 
@@ -97,18 +100,26 @@ function Project() {
             {/* Show All Button */}
 
             <motion.a
+
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 1.1, duration: 0.5 }}
-                href=""
                 className="flex items-center justify-center gap-2 text-sm font-medium text-slate-700 border border-slate-400
-                    rounded-full py-3 px-8 mx-auto mt-16 hover:bg-green-100 hover:text-gray-700 dark:text-green-500
-                    transition duration-300 w-max dark:bg-white/25 dark:border-none dark:backdrop-blur-md dark:hover:bg-gray-700 
-                    dark:hover:text-green-500"
+                        rounded-full py-3 px-8 mx-auto mt-16 hover:bg-green-100 hover:text-gray-700 dark:text-green-500
+                        transition duration-300 w-max dark:bg-white/25 dark:border-none dark:backdrop-blur-md dark:hover:bg-gray-700 
+                        dark:hover:text-green-500 cursor-pointer"
+                onClick={() => setShowModal(true)}
             >
+
                 Show All
 
             </motion.a>
+
+            {showModal && (
+
+                <ProjectModal onClose={() => setShowModal(false)} />
+
+            )}
 
         </motion.div>
 
