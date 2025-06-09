@@ -110,7 +110,7 @@ function Header() {
 
             </div>
 
-            <ul className="flex items-center justify-center gap-6 mt-2 sm:mt-0">
+            <ul className="flex items-center justify-center gap-6 mt-6 sm:mt-0">
 
                 <li>
 

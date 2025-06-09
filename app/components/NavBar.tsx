@@ -46,6 +46,7 @@ function NavBar() {
     }, [isDarkMode]);
 
     return (
+
         <>
             <nav className='w-full fixed px-5 lg:px-8 xl:px-[8%] flex items-center 
             justify-between z-10  backdrop-blur-sm'>
@@ -58,7 +59,7 @@ function NavBar() {
 
                 {/* Desktop Menu */}
 
-                <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full 
+                <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full ml-16
                 px-12 py-3 shadow-sm bg-opacity-50 backdrop-blur-lg nav1 dark:bg-gray-700'>
 
                     <li><a href="#top">Home</a></li>
@@ -101,6 +102,7 @@ function NavBar() {
                 </div>
 
                 {/* Mobile Slide Menu */}
+
                 <ul className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed 
                     top-0 bottom-0 right-0 w-64 z-50 h-screen bg-white backdrop-blur-2xl
                     transition-transform duration-500 dark:bg-gray-800 dark:text-gray-200
