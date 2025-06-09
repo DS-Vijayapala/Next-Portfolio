@@ -18,8 +18,7 @@ export default function Home() {
 
       <NavBar />
       <Header />
-      <About />
-      <Services />
+      <About isDarkMode={false} />
       <Project />
       <Contact />
       <Footer />

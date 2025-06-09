@@ -3,7 +3,9 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from "motion/react"
 
-function About(isDarkMode: boolean) {
+
+
+const About: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
 
     return (
 
@@ -85,7 +87,7 @@ function About(isDarkMode: boolean) {
                                 className="bg-white border border-gray-300 rounded-xl p-6 
                                 transition-transform duration-300 shadow-md 
                                 hover:shadow-xl hover:-translate-y-1 dark:bg-gray-900 
-                                dark:hover:bg-gray-800"
+                                dark:hover:bg-gray-800 cursor-pointer"
                             >
                                 <Image src={icon} alt={title} className="w-8 h-8 mb-4" />
 

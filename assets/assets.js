@@ -6,7 +6,7 @@ import moon from '@/assets/moon.png';
 import sun from '@/assets/sun.png';
 import menu_icon from '@/assets/menu_icon.png';
 import close_icon from '@/assets/close_icon.png';
-import default_image from '@/assets/default_image.png';
+import default_image from '@/assets/default_image.jpeg';
 import project_icon from '@/assets/project_icon.png';
 import language_icon from '@/assets/language_icon.png';
 import html from '@/assets/html.png';
@@ -28,6 +28,8 @@ import mail_icon from '@/assets/mail_icon.png';
 import linkedin from '@/assets/linkedin.png';
 import x_logo from '@/assets/x_logo.png';
 import menu_dark from '@/assets/menu_dark.png';
+import focus from '@/assets/focus.png';
+import skills from '@/assets/skills.png';
 
 
 
@@ -135,16 +137,16 @@ export const toolsIcon = [
 
 export const infoData = [
     {
-        icon: language_icon,
-        iconDark: language_icon,
-        title: 'Languages',
-        description: 'HTml, CSS, JavaScript, React, Node.js, Express.js, MongoDB',
+        icon: skills,
+        iconDark: skills,
+        title: 'Skills',
+        description: '💻 Skilled in React, Node.js, Express.js, MongoDB – building full-stack apps with modern technologies.',
     },
     {
-        icon: project_icon,
-        iconDark: project_icon,
-        title: 'Projects',
-        description: 'Click here to see my projects',
+        icon: focus,
+        iconDark: focus,
+        title: 'Focus Areas',
+        description: '🚀 Building responsive web apps and Creative UI/UX with modern frameworks',
     }
 ]
 

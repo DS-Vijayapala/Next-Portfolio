@@ -48,7 +48,7 @@ function NavBar() {
     return (
         <>
             <nav className='w-full fixed px-5 lg:px-8 xl:px-[8%] flex items-center 
-            justify-between z-10  backdrop-blur-md'>
+            justify-between z-10  backdrop-blur-sm'>
 
                 <a href="#top">
 
@@ -66,8 +66,6 @@ function NavBar() {
                     <li><a href="#about">About Me</a></li>
 
                     <li><a href="#Projects">Projects</a></li>
-
-                    <li><a href="#work">My Work</a></li>
 
                     <li><a href="#contact">Contact me</a></li>
 
@@ -119,8 +117,6 @@ function NavBar() {
                     <li><a href="#about" onClick={closeMenu}>About Me</a></li>
 
                     <li><a href="#Projects" onClick={closeMenu}>Projects</a></li>
-
-                    <li><a href="#work" onClick={closeMenu}>My Work</a></li>
 
                     <li><a href="#contact" onClick={closeMenu}>Contact me</a></li>
 

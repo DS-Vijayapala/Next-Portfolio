@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { assets, serviceData } from '@/assets/assets'
 import Image from 'next/image'
 import { motion } from "motion/react"
+import { ProjectModal } from '@/app/components/ProjectModel'
 
 function Services() {
+
+    const [showModal, setShowModal] = useState(false);
+
     return (
 
         <motion.div
@@ -92,15 +96,23 @@ function Services() {
             </motion.div>
 
             <motion.a
+                onClick={() => setShowModal(true)}
                 whileHover={{ scale: 1.05 }}
-                href=""
                 className="flex items-center justify-center gap-2 text-sm font-medium text-slate-700 border border-slate-400
                                 rounded-full py-3 px-8 mx-auto mt-16 hover:bg-gray-700 dark:text-green-500
                                 transition duration-300 w-max dark:bg-white/25 dark:border-none dark:backdrop-blur-md "
             >
                 View Projects
+
                 <Image src={assets.rightArrow} alt="right arrow" className="w-4" />
+
             </motion.a>
+
+            {showModal && (
+
+                <ProjectModal onClose={() => setShowModal(false)} />
+
+            )}
 
         </motion.div>
 
