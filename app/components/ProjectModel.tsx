@@ -4,6 +4,7 @@ import { Projects } from '@/assets/projects'
 
 
 
+
 interface ProjectModalProps {
 
     onClose: () => void;
