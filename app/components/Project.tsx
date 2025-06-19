@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { assets, serviceData, Projects } from '@/assets/assets'
+import { assets, Projects } from '@/assets/assets'
 import Image from 'next/image'
 import { motion } from "motion/react"
 import { ProjectModal } from '@/app/components/ProjectModel'
