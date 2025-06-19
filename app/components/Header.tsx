@@ -65,7 +65,7 @@ function Header() {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="text-sm sm:text-base text-gray-700 max-w-xl dark:text-gray-300">
                 Specializing in building scalable web applications with the
-                <span className="font-medium text-green-700"> MERN Stack </span> – MongoDB, Express.js, React / Next.js, and Node.js.
+                <span className="font-medium text-green-700"> MERN Stack </span> MongoDB, Express.js, React / Next.js, and Node.js.
                 I love crafting user-friendly interfaces and writing efficient backend code.
 
             </motion.p>
@@ -117,8 +117,8 @@ function Header() {
                     <a
                         href="#"
                         target="_blank"
-                        className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition dark:text-gray-400
-                                        "
+                        className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition dark:text-gray-400"
+
                     >
 
                         <Image src={assets.github} alt="GitHub"
