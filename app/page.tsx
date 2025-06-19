@@ -1,11 +1,9 @@
 'use client'
 
-import React, { useEffect } from "react";
-import Image from "next/image";
+import React from "react";
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import About from "./components/About";
-import Services from "./components/services";
 import Project from "./components/Project";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
