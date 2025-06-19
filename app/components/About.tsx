@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 
 
 
-const About: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
+const About: React.FC<{ isDarkMode: boolean }> = () => {
 
     return (
 
@@ -80,7 +80,7 @@ const About: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
                         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-3xl">
 
 
-                        {infoData.map(({ icon, iconDark, title, description }, index) => (
+                        {infoData.map(({ icon, title, description }, index) => (
 
                             <div
                                 key={index}
