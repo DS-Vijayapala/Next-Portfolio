@@ -2,18 +2,7 @@ import React, { useState } from 'react';
 import { X, ExternalLink, Github, Calendar, Tag } from 'lucide-react';
 import { Projects } from '@/assets/projects'
 
-// Type definitions
-interface Project {
 
-    title: string;
-    description: string;
-    bgImage: string;
-    technologies: string[];
-    github?: string;
-    live?: string;
-    date: string;
-
-}
 
 interface ProjectModalProps {
 
