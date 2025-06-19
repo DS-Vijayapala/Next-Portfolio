@@ -12,7 +12,7 @@ function Header() {
     return (
 
         <header className="w-11/12 max-w-4xl mx-auto h-screen flex flex-col 
-        items-center justify-center text-center gap-6 px-4">
+        items-center justify-center text-center gap-6 px-4 mt-5">
 
             {/* Profile Image */}
 
