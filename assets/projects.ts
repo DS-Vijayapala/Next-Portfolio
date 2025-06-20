@@ -3,56 +3,48 @@
 export const Projects = [
     {
         title: "E-Commerce Platform",
-        description: "A full-stack e-commerce solution built with React and Node.js, featuring user authentication, payment integration, and admin dashboard.",
-        bgImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-        technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-        github: "https://github.com/example/ecommerce",
-        live: "https://ecommerce-demo.com",
-        date: "2024"
+        description:
+            "A fully-featured Django-based e-commerce site with Tailwind CSS, including user authentication, cart system, checkout, and admin panel.",
+        bgImage:
+            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+        technologies: ["Django", "Tailwind CSS"],
+        github: "https://github.com/DS-Vijayapala/Django-E-Commerce-Site",
+        live: "#",
+        date: "2025",
     },
     {
-        title: "Task Management App",
-        description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-        bgImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-        technologies: ["React", "Firebase", "Tailwind CSS"],
-        github: "https://github.com/example/taskmanager",
-        live: "https://taskmanager-demo.com",
-        date: "2024"
+        title: "Portfolio Website",
+        description:
+            "A personal portfolio built using React and Tailwind CSS, showcasing projects, skills, and contact information in a modern UI.",
+        bgImage:
+            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+        technologies: ["React", "Tailwind CSS"],
+        github: "https://github.com/DS-Vijayapala/Next-Portfolio",
+        live: "#",
+        date: "2025",
     },
+
     {
-        title: "Weather Dashboard",
-        description: "A responsive weather application that provides detailed forecasts, interactive maps, and weather alerts for multiple locations.",
-        bgImage: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop",
-        technologies: ["Vue.js", "OpenWeather API", "Chart.js"],
-        github: "https://github.com/example/weather",
-        live: "https://weather-demo.com",
-        date: "2023"
-    },
-    {
-        title: "Social Media Dashboard",
-        description: "An analytics dashboard for social media management with data visualization, content scheduling, and performance tracking.",
-        bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-        technologies: ["Angular", "D3.js", "Express.js"],
-        github: "https://github.com/example/social-dashboard",
-        live: "https://social-demo.com",
-        date: "2023"
-    },
-    {
-        title: "Learning Management System",
-        description: "A comprehensive LMS platform with course creation, progress tracking, quizzes, and interactive learning modules.",
-        bgImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=300&fit=crop",
-        technologies: ["React", "PostgreSQL", "Redis", "AWS"],
-        github: "https://github.com/example/lms",
-        live: "https://lms-demo.com",
-        date: "2023"
-    },
-    {
-        title: "Cryptocurrency Tracker",
-        description: "A real-time cryptocurrency tracking application with portfolio management, price alerts, and market analysis tools.",
-        bgImage: "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=400&h=300&fit=crop",
-        technologies: ["React Native", "CoinGecko API", "Redux"],
-        github: "https://github.com/example/crypto-tracker",
-        live: "https://crypto-demo.com",
-        date: "2022"
+        title: "Vidoop - AI-Powered Media Optimizer",
+        description:
+            `An advanced media platform where users can upload videos and images,
+             apply AI-based transformations (like YouTube-style previews), 
+             and download optimized versions for various social media formats.
+              Includes authentication, upload progress, smart cropping, and Cloudinary AI integration.`,
+        bgImage:
+            "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg",
+        technologies: [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "Clerk Auth",
+            "Cloudinary",
+            "Zustand",
+            "Zod",
+        ],
+        github: "https://github.com/DS-Vijayapala/Vidoop---AI-Media-Platform",
+        live: "#",
+        date: "2025",
     }
-];
+
+]

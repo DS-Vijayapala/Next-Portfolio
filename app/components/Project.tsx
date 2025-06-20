@@ -40,14 +40,16 @@ function Project() {
                     transition={{ delay: 0.3, duration: 0.5 }}
                     className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
 
-                    I provide a wide range of modern development services, focusing on performance,
-                    accessibility, and design excellence.
+                    I provide a wide range of modern development services, focusing on performance, accessibility, and design excellence.
+                    My work includes responsive UIs, dynamic web applications, and full-stack systems optimized for real-world use.
+                    Each project emphasizes clean code, scalability, and user experience, delivering robust and future-ready digital solutions.
+
                 </motion.p>
 
             </div>
 
             {/* Project Cards Grid */}
-
+            {/* 
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -94,7 +96,7 @@ function Project() {
 
                 ))}
 
-            </motion.div>
+            </motion.div> */}
 
 
             {/* Show All Button */}

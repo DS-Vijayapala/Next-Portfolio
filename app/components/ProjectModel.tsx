@@ -137,7 +137,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
                                         )}
 
-                                        {project.live && (
+                                        {/* {project.live && (
 
                                             <a
                                                 href={project.live}
@@ -151,7 +151,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
                                             </a>
 
-                                        )}
+                                        )} */}
 
                                     </div>
 
@@ -237,7 +237,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
                                         )}
 
-                                        {project.live && (
+                                        {/* {project.live && (
 
                                             <a
                                                 href={project.live}
@@ -253,7 +253,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
                                             </a>
 
-                                        )}
+                                        )} */}
 
                                     </div>
 

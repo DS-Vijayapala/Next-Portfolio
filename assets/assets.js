@@ -62,7 +62,7 @@ export const assets = {
     mail_icon,
     linkedin,
     x_logo,
-    menu_dark
+    menu_dark,
 
 }
 

@@ -12,7 +12,7 @@ function Header() {
     return (
 
         <header className="w-11/12 max-w-4xl mx-auto h-screen flex flex-col 
-        items-center justify-center text-center gap-6 px-4 mt-5">
+        items-center justify-center text-center gap-6 px-4">
 
             {/* Profile Image */}
 
@@ -24,7 +24,7 @@ function Header() {
                 <Image
                     src={assets.default_image}
                     alt="Dineth Profile"
-                    className="w-32 sm:w-40 md:w-48 rounded-full border-4 border-gray-500 shadow-lg"
+                    className="w-32 sm:w-40 md:w-48 rounded-full border-4 border-gray-500 shadow-lg mt-5"
                 />
 
             </motion.div>
@@ -115,7 +115,7 @@ function Header() {
                 <li>
 
                     <a
-                        href="#"
+                        href="https://github.com/DS-Vijayapala"
                         target="_blank"
                         className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition dark:text-gray-400"
 
@@ -133,7 +133,7 @@ function Header() {
                 <li>
 
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/in/dineth-sachintha/"
                         target="_blank"
                         className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition dark:text-gray-400"
                     >
@@ -146,7 +146,7 @@ function Header() {
 
                 </li>
 
-                <li>
+                {/* <li>
 
                     <a
                         href="#"
@@ -161,7 +161,7 @@ function Header() {
 
                     </a>
 
-                </li>
+                </li> */}
 
             </ul>
 

@@ -21,7 +21,7 @@ function Footer() {
                     <Image src={assets.mail_icon} alt="Email icon" className="w-5" />
 
                     <a href="mailto:example@example.com" className="hover:underline">
-                        example@example.com
+                        dinethsachintha52@gmail.com
                     </a>
 
                 </div>
@@ -33,7 +33,7 @@ function Footer() {
                     <li>
 
                         <a
-                            href="#"
+                            href="https://github.com/DS-Vijayapala"
                             target="_blank"
                             className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition dark:text-gray-400
                             "
@@ -51,7 +51,7 @@ function Footer() {
                     <li>
 
                         <a
-                            href="#"
+                            href="https://www.linkedin.com/in/dineth-sachintha/"
                             target="_blank"
                             className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition dark:text-gray-400"
                         >
@@ -64,7 +64,7 @@ function Footer() {
 
                     </li>
 
-                    <li>
+                    {/* <li>
 
                         <a
                             href="#"
@@ -79,7 +79,7 @@ function Footer() {
 
                         </a>
 
-                    </li>
+                    </li> */}
 
                 </ul>
 
