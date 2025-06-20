@@ -24,7 +24,7 @@ function Header() {
                 <Image
                     src={assets.default_image}
                     alt="Dineth Profile"
-                    className="w-32 sm:w-40 md:w-48 rounded-full border-4 border-gray-500 shadow-lg mt-8"
+                    className="w-32 sm:w-40 md:w-48 rounded-full border-4 border-gray-500 shadow-lg mt-10"
                 />
 
             </motion.div>
