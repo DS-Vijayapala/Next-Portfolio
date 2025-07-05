@@ -16,7 +16,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ onClose }) => {
 
     const [selectedFilter, setSelectedFilter] = useState('all');
 
-    const allTechnologies = ['React', 'Next.js'];
+    const allTechnologies = ['React', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'Clerk Auth', 'Cloudinary', 'Tostify', 'Jwt', 'MongoDB', 'Mongoose',];
 
     const filteredProjects = selectedFilter === 'all'
 
