@@ -21,12 +21,12 @@ export const Projects = [
             "Zod",
         ],
         github: "https://github.com/DS-Vijayapala/Vidoop---AI-Media-Platform",
-        live: "#",
+        live: "https://github.com/DS-Vijayapala?tab=repositories",
         date: "2025",
     },
 
     {
-        title: "Project Z - Job Portal & HRM Platform (v1)",
+        title: "Project Z - Job Portal (v1)",
         description:
             `A full-stack job portal and HRM system where users can register, post and apply for jobs, 
          and manage their profiles. Employers can list job openings, manage applicants, 
@@ -46,9 +46,23 @@ export const Projects = [
             "Jwt",
         ],
         github: "https://project-z-test.vercel.app/",
-        live: "#",
+        live: "https://project-z-test.vercel.app/",
         date: "2025"
     },
+
+
+    {
+        title: "Rentzee – Online Rental Platform",
+        description:
+            "A MERN stack rental marketplace for vehicles. Features include real-time availability, secure bookings, dynamic listings with Cloudinary, and an intuitive, responsive UI.",
+        bgImage:
+            "https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=400&h=300&fit=crop",
+        technologies: ["MongoDB", "Express.js", "React", "Node.js", "Tailwind CSS", "Cloudinary"],
+        github: "https://github.com/DS-Vijayapala/Project-R",
+        live: "#",
+        date: "2025",
+    },
+
 
     {
         title: "E-Commerce Platform",
@@ -58,7 +72,7 @@ export const Projects = [
             "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
         technologies: ["Django", "Tailwind CSS"],
         github: "https://github.com/DS-Vijayapala/Django-E-Commerce-Site",
-        live: "#",
+        live: "https://github.com/DS-Vijayapala",
         date: "2025",
     },
 
@@ -70,8 +84,9 @@ export const Projects = [
             "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
         technologies: ["React", "Tailwind CSS"],
         github: "https://github.com/DS-Vijayapala/Next-Portfolio",
-        live: "#",
+        live: "https://github.com/DS-Vijayapala",
         date: "2025",
     },
+
 
 ]
