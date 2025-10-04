@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { motion } from "motion/react"
-import { ProjectModal } from '@/app/components/ProjectModel'
+import { ProjectModal } from '@/components/ProjectModel'
 
 function Header() {
 

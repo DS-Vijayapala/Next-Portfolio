@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { assets, Projects } from '@/assets/assets'
 import Image from 'next/image'
 import { motion } from "motion/react"
-import { ProjectModal } from '@/app/components/ProjectModel'
+import { ProjectModal } from '@/components/ProjectModel'
 
 function Project() {
 
