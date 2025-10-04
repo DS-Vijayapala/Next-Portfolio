@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar/NavBar";
+import Footer from "@/components/Footer";
 
 const outFit = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600", "700"],
@@ -32,7 +33,23 @@ export default function RootLayout({
         dark:bg-gray-900 dark:text-white`}
       >
 
-        {children}
+        <header>
+
+          <NavBar />
+
+        </header>
+
+        <main>
+
+          {children}
+
+        </main>
+
+        <footer>
+
+          <Footer />
+
+        </footer>
 
       </body>
 
