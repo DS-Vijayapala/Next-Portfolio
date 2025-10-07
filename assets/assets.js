@@ -30,6 +30,7 @@ import x_logo from '@/assets/x_logo.png';
 import menu_dark from '@/assets/menu_dark.png';
 import focus from '@/assets/focus.png';
 import skills from '@/assets/skills.png';
+import { Code2, Network, ServerCog, MonitorSmartphone } from 'lucide-react'
 
 
 
@@ -137,18 +138,25 @@ export const toolsIcon = [
 
 export const infoData = [
     {
-        icon: skills,
-        iconDark: skills,
-        title: 'Skills',
-        description: '💻 Skilled in React, Node.js, Express.js, MongoDB – building full-stack apps with modern technologies.',
+        icon: Code2,
+        title: 'Technical Skills',
+        description:
+            'Proficient in MERN Stack, Next.js, and TypeScript — building fast, scalable full-stack applications with clean and maintainable code.',
     },
     {
-        icon: focus,
-        iconDark: focus,
+        icon: Network,
+        title: 'System Architecture',
+        description:
+            'Understanding of Monolithic and Microservices architectures - designing systems that scale efficiently while staying developer-friendly.',
+    },
+    {
+        icon: MonitorSmartphone,
         title: 'Focus Areas',
-        description: '🚀 Building responsive web apps and Creative UI/UX with modern frameworks',
-    }
+        description:
+            'Passionate about intuitive UI/UX, performance optimization, and delivering robust, user-centered full-stack experiences.',
+    },
 ]
+
 
 export const workData = [
     {
