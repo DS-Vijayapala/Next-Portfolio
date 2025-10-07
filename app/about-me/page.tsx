@@ -1,9 +1,13 @@
-import React from 'react'
 
-const AboutMe = () => {
+import React from 'react'
+import AboutMe from '@/components/AboutMe/About'
+
+const AboutMePage = () => {
     return (
-        <div>AboutMe</div>
+        <div>
+            <AboutMe />
+        </div>
     )
 }
 
-export default AboutMe
+export default AboutMePage
