@@ -1,42 +1,58 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react'
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
-import { motion } from "motion/react"
+import React, { useState } from "react";
+import { motion } from "motion/react";
+import { Send, Mail, MessageSquare, User, Sparkles } from "lucide-react";
+import "./Contact.css";
 
 function Contact() {
 
     const [result, setResult] = useState("");
 
+    const [loading, setLoading] = useState(false);
+
     const onSubmit = async (event: any) => {
 
         event.preventDefault();
 
-        setResult("Sending....");
+        setLoading(true);
 
-        const formData = new FormData(event.target);
+        try {
 
-        formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
+            const formData = new FormData(event.target);
 
-        const response = await fetch("https://api.web3forms.com/submit", {
+            formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
 
-            method: "POST",
-            body: formData
+            const response = await fetch("https://api.web3forms.com/submit", {
 
-        });
+                method: "POST",
+                body: formData
 
-        const data = await response.json();
+            });
 
-        if (data.success) {
+            const data = await response.json();
 
-            setResult("Form Submitted Successfully");
-            event.target.reset();
+            if (data.success) {
 
-        } else {
+                setResult("Form Submitted Successfully");
 
-            console.log("Error", data);
-            setResult(data.message);
+                event.target.reset();
+
+            } else {
+
+                console.log("Error", data);
+
+                setResult(data.message);
+
+            }
+
+        } catch (error) {
+
+            console.log(error)
+
+        } finally {
+
+            setLoading(false)
 
         }
 
@@ -44,133 +60,229 @@ function Contact() {
 
     return (
 
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+        <div
             id="contact"
-            className="w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2  text-slate-800"
+            className="relative w-full px-4 sm:px-10 lg:px-[12%]
+             py-20 overflow-hidden bg-gradient-to-br
+              from-slate-950 via-slate-900 to-slate-950"
         >
 
-            {/* Header */}
+            {/* Animated Waves */}
 
-            <div className="text-center mb-12">
+            <div className="waves-background">
 
-                <motion.h4
-                    initial={{ y: -20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3, duration: 0.5 }}
-                    className="text-green-600 text-lg font-Ovo">Contact Me</motion.h4>
-
-                <motion.h2
-                    initial={{ y: -20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.5, duration: 0.5 }}
-                    className="text-2xl sm:text-4xl font-bold mt-2 dark:text-gray-300">Get In Touch</motion.h2>
-
-                <motion.p
-                    initial={{ y: -20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.7, duration: 0.5 }}
-                    className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 text-base dark:text-gray-300">
-
-                    Have a project or idea in mind? Feel free to reach out - I’d love to hear from you.
-
-                </motion.p>
+                <div className="wave wave-1"></div>
+                <div className="wave wave-2"></div>
+                <div className="wave wave-3"></div>
 
             </div>
 
-            {/* Contact Form */}
+            {/* Floating Orbs */}
 
-            <motion.form
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                onSubmit={onSubmit} className="max-w-2xl mx-auto space-y-6">
+            <div className="orbs-background">
 
-                {/* Name & Email */}
+                <div className="orb orb-1"></div>
+                <div className="orb orb-2"></div>
+                <div className="orb orb-3"></div>
+                <div className="orb orb-4"></div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 m-10">
+            </div>
 
-                    <motion.input
-                        initial={{ x: -50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 1.2, duration: 0.3 }}
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
-                                    focus:border-green-500 focus:ring-green-300 focus:outline-none
-                                    bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
-                                    dark:text-gray-100 shadow-sm transition-all duration-300"
-                        required
-                    />
+            {/* Overlay */}
 
-                    <motion.input
-                        initial={{ x: 50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 1.1, duration: 0.3 }}
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
-                                    focus:border-green-500 focus:ring-green-300 focus:outline-none
-                                    bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
-                                    dark:text-gray-100 shadow-sm transition-all duration-300"
-                        required
-                    />
+            <div className="absolute inset-0 bg-gradient-to-b
+             from-slate-900/60 via-transparent to-slate-900/60 
+             pointer-events-none"></div>
 
-                </div>
+            {/* Content */}
 
-                {/* Message */}
+            <div className="relative z-10">
 
-                <div className='m-10'>
+                {/* Header */}
 
-                    <motion.textarea
-                        initial={{ y: 100, opacity: 0 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 1.3, duration: 0.3 }}
-                        rows={5}
-                        name="message"
-                        placeholder="Your Message"
-                        className="p-3 w-full rounded-md border border-gray-300 dark:border-gray-600
-                                    focus:border-green-500 focus:ring-green-300 focus:outline-none
-                                    bg-white/80 dark:bg-slate-800/80 placeholder-gray-500 dark:placeholder-gray-400
-                                    dark:text-gray-100 shadow-sm transition-all duration-300"
-                        required
+                <div className="text-center mb-5">
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+                        viewport={{ once: true }}
+                        className="inline-flex items-center gap-2 px-4 py-2 
+                        rounded-full bg-violet-500/10 border border-violet-500/20 mb-4"
                     >
 
-                    </motion.textarea>
+                        <Sparkles className="w-4 h-4 text-violet-400" />
+
+                        <span className="text-violet-400 text-sm font-medium">Contact Me</span>
+
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="text-2xl sm:text-3xl font-bold bg-gradient-to-r
+                         from-white via-slate-200 to-slate-300 bg-clip-text text-transparent mb-2"
+                    >
+
+                        Get In Touch
+
+                    </motion.h2>
+
+                    <motion.p
+
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="max-w-2xl mx-auto text-slate-400 text-base sm:text-sm"
+                    >
+
+                        Have a project or idea in mind? Feel free to reach out — I'd love to hear from you.
+
+                    </motion.p>
 
                 </div>
 
-                {/* Submit Button */}
+                {/* Contact Form */}
 
-                <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                    type="submit"
-                    className="flex items-center gap-2 bg-green-600 text-white px-8 py-3 rounded-full
-                                hover:bg-green-700 transition-all duration-300 shadow-md mx-auto"
+                <motion.form
+                    onSubmit={onSubmit}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="max-w-2xl mx-auto contact-form-container space-y-6"
                 >
 
-                    Submit Now
-                    <Image src={assets.rightArrow} alt="send" className="w-5" />
+                    {/* Name & Email */}
 
-                </motion.button>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
-                {/* Result */}
+                        <div className="relative">
 
-                {result && (
-                    <p className="text-center text-sm text-green-600 mt-4">{result}</p>
-                )}
+                            <User className="absolute top-5 left-3 text-violet-400 w-4 
+                            h-4 pointer-events-none" />
 
-            </motion.form>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                className="contact-input pl-10 pt-3"
+                                required
+                            />
 
-        </motion.div>
+                        </div>
+
+                        <div className="relative">
+
+                            <Mail className="absolute top-5 left-3 text-violet-400 w-4 h-4 
+                            pointer-events-none" />
+
+                            <label htmlFor="contact-email" className="sr-only">Email</label>
+
+                            <input
+                                id="contact-email"
+                                type="email"
+                                name="email"
+                                placeholder="Your Email"
+                                className="contact-input pl-10 pt-3"
+                                required
+                            />
+
+                        </div>
+
+                    </div>
+
+                    {/* Message */}
+
+                    <div className="relative">
+
+                        <MessageSquare className="absolute top-6 left-4 text-violet-400
+                         w-4 h-4 pointer-events-none" />
+
+                        <textarea
+                            rows={6}
+                            name="message"
+                            placeholder="Your Message"
+                            className="contact-textarea pl-10 pt-6"
+                            required
+                        />
+
+                    </div>
+
+                    {/* Submit Button */}
+
+                    <div className="flex justify-center">
+
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className={`flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600
+                             hover:from-violet-700 hover:to-purple-700 text-white mt-4 text-sm
+                            rounded-full w-32 h-10 font-medium shadow-md relative overflow-hidden transition-all duration-300
+                            ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                        >
+
+                            {loading ? (
+
+                                <>
+                                    <motion.div
+                                        className="w-4 h-4 border-2 border-white border-t-transparent 
+                                        rounded-full animate-spin"
+                                        aria-label="loading"
+                                    ></motion.div>
+
+                                    Sending...
+
+                                </>
+
+                            ) : (
+
+                                <>
+
+                                    Submit
+
+                                    <Send className="w-4 h-4 transition-transform duration-300
+                                     group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+
+                                </>
+
+                            )}
+
+                        </button>
+
+                    </div>
+
+                    {/* Result Message */}
+
+                    {result && (
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="flex justify-center items-center gap-2 mt-4 text-slate-300"
+                        >
+
+                            <Sparkles className="w-4 h-4 text-violet-400" />
+
+                            <p className="text-sm font-medium">{result}</p>
+
+                        </motion.div>
+
+                    )}
+
+                </motion.form>
+
+            </div>
+
+        </div>
 
     );
 
 }
 
-export default Contact
+
+export default Contact;
