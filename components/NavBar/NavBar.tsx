@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react'
 import { Menu, X, ArrowRight, Code } from 'lucide-react'
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 function NavBar() {
@@ -54,11 +53,11 @@ function NavBar() {
 
                 {/* Logo */}
 
-                <Link href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
+                <a href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
 
                     <Code className='w-10 h-10 cursor-pointer text-violet-400' />
 
-                </Link>
+                </a>
 
                 {/* Desktop Menu */}
 
@@ -66,7 +65,7 @@ function NavBar() {
 
                     <li>
 
-                        <Link
+                        <a
                             href="/"
                             className={`font-medium transition-colors duration-300 relative group
                             ${isActive('/') ? 'text-violet-400' : 'hover:text-violet-400'}`}
@@ -78,13 +77,13 @@ function NavBar() {
                              to-purple-600 transition-all duration-300
                             ${isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
 
-                        </Link>
+                        </a>
 
                     </li>
 
                     <li>
 
-                        <Link
+                        <a
                             href="/about-me"
                             className={`font-medium transition-colors duration-300 relative group
                             ${isActive('/about-me') ? 'text-violet-400' : 'hover:text-violet-400'}`}
@@ -96,13 +95,13 @@ function NavBar() {
                              to-purple-600 transition-all duration-300
                             ${isActive('/about-me') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
 
-                        </Link>
+                        </a>
 
                     </li>
 
                     <li>
 
-                        <Link
+                        <a
                             href="/all-projects"
                             className={`font-medium transition-colors duration-300 relative group
                             ${isActive('/all-projects') ? 'text-violet-400' : 'hover:text-violet-400'}`}
@@ -114,13 +113,13 @@ function NavBar() {
                              to-purple-600 transition-all duration-300
                             ${isActive('/all-projects') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
 
-                        </Link>
+                        </a>
 
                     </li>
 
                     <li>
 
-                        <Link
+                        <a
                             href="/contact-me"
                             className={`font-medium transition-colors duration-300 relative group
                             ${isActive('/contact-me') ? 'text-violet-400' : 'hover:text-violet-400'}`}
@@ -132,7 +131,7 @@ function NavBar() {
                              to-purple-600 transition-all duration-300
                             ${isActive('/contact-me') ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
 
-                        </Link>
+                        </a>
 
                     </li>
 
@@ -144,7 +143,7 @@ function NavBar() {
 
                     {/* Contact Button - Desktop */}
 
-                    <Link
+                    <a
                         href="/contact-me"
                         className='hidden md:inline-flex items-center gap-1.5 bg-gradient-to-r
                          from-violet-600 to-purple-600 
@@ -162,7 +161,7 @@ function NavBar() {
                         <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0
                          group-hover:opacity-100 transition-opacity duration-300"></span>
 
-                    </Link>
+                    </a>
 
                     {/* Mobile Menu Button */}
 
@@ -204,7 +203,7 @@ function NavBar() {
 
                             <li>
 
-                                <Link
+                                <a
                                     href="/"
                                     onClick={closeMenu}
                                     className={`block text-sm font-medium transition-colors duration-300
@@ -213,13 +212,13 @@ function NavBar() {
 
                                     Home
 
-                                </Link>
+                                </a>
 
                             </li>
 
                             <li>
 
-                                <Link
+                                <a
                                     href="/about-me"
                                     onClick={closeMenu}
                                     className={`block text-sm font-medium transition-colors duration-300
@@ -228,13 +227,13 @@ function NavBar() {
 
                                     About Me
 
-                                </Link>
+                                </a>
 
                             </li>
 
                             <li>
 
-                                <Link
+                                <a
                                     href="/all-projects"
                                     onClick={closeMenu}
                                     className={`block text-sm font-medium transition-colors duration-300
@@ -243,13 +242,13 @@ function NavBar() {
 
                                     Projects
 
-                                </Link>
+                                </a>
 
                             </li>
 
                             <li>
 
-                                <Link
+                                <a
                                     href="/contact-me"
                                     onClick={closeMenu}
                                     className={`block text-sm font-medium transition-colors duration-300
@@ -258,13 +257,13 @@ function NavBar() {
 
                                     Contact
 
-                                </Link>
+                                </a>
 
                             </li>
 
                         </ul>
 
-                        <Link
+                        <a
                             href="/contact-me"
                             onClick={closeMenu}
                             className='flex items-center justify-center gap-2 bg-gradient-to-r from-violet-600 to-purple-600
@@ -281,7 +280,7 @@ function NavBar() {
                             <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0
                              group-hover:opacity-100 transition-opacity duration-300"></span>
 
-                        </Link>
+                        </a>
 
                     </div>
 
