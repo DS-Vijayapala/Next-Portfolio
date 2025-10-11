@@ -41,7 +41,7 @@ const Project = () => {
         >
             {/* Animated Background Elements - Pure CSS */}
 
-            <div className="absolute inset-0 -z-10">
+            <div className="relative inset-0 -z-10">
 
                 {/* Gradient Orbs */}
 
