@@ -29,6 +29,10 @@ export const Projects = [
         github: "https://github.com/DS-Vijayapala/Vidoop---AI-Media-Platform",
         live: "https://vidoop.vercel.app/",
         date: "2025",
+        project_status: true,
+        architecture: "Monolotic",
+        short_description: ""
+
     },
 
     {
@@ -63,6 +67,9 @@ export const Projects = [
         github: "https://github.com/DS-Vijayapala/Project-Z",
         live: "https://project-z-test.vercel.app/",
         date: "2025",
+        project_status: true,
+        architecture: "Monolotic",
+        short_description: ""
     },
 
     {
@@ -93,6 +100,9 @@ export const Projects = [
         github: "https://github.com/DS-Vijayapala/Project-R",
         live: "https://rentzee.vercel.app/",
         date: "2025",
+        project_status: true,
+        architecture: "Monolotic",
+        short_description: ""
     },
 
     {
@@ -121,6 +131,10 @@ export const Projects = [
         github: "https://github.com/DS-Vijayapala/Django-E-Commerce-Site",
         live: "https://github.com/DS-Vijayapala/Django-E-Commerce-Site",
         date: "2025",
+        project_status: true,
+        architecture: "Monolotic",
+        short_description: ""
+
     },
 
     {
@@ -148,6 +162,9 @@ export const Projects = [
         github: "https://github.com/DS-Vijayapala/Next-Portfolio",
         live: "https://next-portfolio-dsv.vercel.app/",
         date: "2025",
+        project_status: true,
+        architecture: "Monolotic",
+        short_description: ""
     },
 
 ];

@@ -1,4 +1,4 @@
-import { Projects } from "@/assets/projects";
+import { Projects } from "@/actions/projects";
 
 /**
  * Fetch a project by its ID or slug.

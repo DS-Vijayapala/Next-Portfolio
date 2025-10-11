@@ -5,33 +5,11 @@ import { motion } from "framer-motion";
 import { Sparkles, Code2, Rocket } from "lucide-react";
 import "./projectBackground.css";
 import ProjectCard from "../ProjectCard";
+import { Projects } from "@/actions/projects";
 
 const Project = () => {
 
-    const project = {
-        title: "Vidoop - AI-Powered Media Optimizer",
-        description:
-            `An advanced media platform where users can upload videos and images,
-             apply AI-based transformations (like YouTube-style previews), 
-             and download optimized versions for various social media formats.
-              Includes authentication, upload progress, smart cropping, and Cloudinary AI integration.`,
-        bgImage:
-            "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg",
-        technologies: [
-            "Next.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Clerk Auth",
-            "Cloudinary",
-            "Zustand",
-            "Zod",
-        ],
-        github: "https://github.com/DS-Vijayapala/Vidoop---AI-Media-Platform",
-        live: "https://github.com/DS-Vijayapala?tab=repositories",
-        date: "2025",
-        project_status: false, // false mean project is ongoing true mean project is completed
-        architecture: "monolothic"
-    }
+    const projects = Projects
 
     return (
         <div
@@ -108,8 +86,8 @@ const Project = () => {
                         className="text-2xl sm:text-3xl lg:text-3xl font-bold text-slate-200 mb-6"
                     >
 
-                        <span className="bg-gradient-to-r from-violet-600 to-purple-600 
-                        bg-clip-text text-transparent">
+                        <span className="font-bold bg-gradient-to-r
+                         from-white via-slate-200 to-slate-300 bg-clip-text text-transparent">
 
                             Featured Projects
 
@@ -163,7 +141,6 @@ const Project = () => {
                 </div>
 
                 {/* Projects Grid Container - Ready for ProjectCard */}
-
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -171,13 +148,11 @@ const Project = () => {
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12"
                 >
                     {/* ProjectCard components will go here */}
-
-                    <ProjectCard project={project} />
-                    <ProjectCard project={project} />
-                    <ProjectCard project={project} />
-
-
+                    {projects.map((p, index) => (
+                        <ProjectCard key={p.id || index} project={p} />
+                    ))}
                 </motion.div>
+
 
             </motion.div>
 
