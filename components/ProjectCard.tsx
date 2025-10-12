@@ -11,6 +11,7 @@ interface Project {
     project_status: boolean;
     architecture: string;
     id?: string;
+    short_description?: string
 }
 
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -25,7 +26,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
         github,
         date,
         project_status,
-        architecture
+        architecture,
+        short_description
     } = project;
 
     return (
@@ -134,7 +136,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 <p className={`text-sm text-slate-400 leading-relaxed mb-4 transition-all duration-500 
                 ${isHovered ? 'line-clamp-3 opacity-100' : 'line-clamp-2 opacity-90'}`}>
 
-                    {description}
+                    {short_description}
 
                 </p>
 
