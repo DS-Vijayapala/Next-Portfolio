@@ -28,7 +28,7 @@ export const Projects = [
     </p>
   `,
     short_description: "A modern social media prototype focusing on content sharing, engagement, and a distraction-free UI.",
-    bgImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop",
+    bgImage: "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg",
     technologies: ["React", "Clerk", "Express.js", "Mongoose", "MongoDB", "Node.js", "Cloudinary", "Redux", "Axios", "Inngest"],
     github: "https://github.com/DS-Vijayapala/Project-ZM",
     live: "",
