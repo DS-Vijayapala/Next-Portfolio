@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Code2, Loader2 } from 'lucide-react'
+import { Code2 } from 'lucide-react'
 import "./loading.css"
 
 const Loading = () => {
