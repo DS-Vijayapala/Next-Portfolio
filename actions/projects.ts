@@ -9,6 +9,7 @@ export const Projects = [
         As video and image optimization are often time-consuming, I wanted to build a tool that could intelligently 
         automate transformations and formatting across platforms like YouTube, Instagram, and TikTok.
       </p>
+      <br/>
 
       <h3>Benefits & Future Enhancements</h3>
       <p>
@@ -16,6 +17,7 @@ export const Projects = [
         Future plans include building a <strong>mobile app</strong> for on-the-go media optimization, 
         AI caption generation, and social platform auto-uploading.
       </p>
+      <br/>
 
       <h3>Technology Stack</h3>
       <p>
@@ -23,6 +25,7 @@ export const Projects = [
         for real-time processing. <strong>Tailwind CSS</strong> powers the responsive UI, 
         while <strong>Zustand</strong> and <strong>Zod</strong> ensure efficient state and data management.
       </p>
+      <br/>
     `,
     short_description: "An AI-powered media optimizer that helps creators enhance and format their videos and images effortlessly.",
     bgImage: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg",
@@ -39,7 +42,7 @@ export const Projects = [
     id: "project-z-job-portal",
     title: "Zipher.lk - Job Portal",
     description: `
-      <h3>Why I Chose This Project</h3>
+      <h2><b>Why I Chose This Project</b></h2>
       <p>
         I developed <strong>Project Z</strong> to address the growing need for a centralized job and HRM platform. 
         Many job portals lack real HR management integration, so I aimed to build a system connecting 
