@@ -1,0 +1,303 @@
+/* Hero Section Styles - Matrix Rain Effect */
+
+/* Matrix Rain Background Container */
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Matrix Column */
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    width: 20px;
+    height: 100%;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: #8b5cf6;
+    text-shadow: 0 0 8px #8b5cf6;
+    animation: matrix-fall linear infinite;
+    white-space: pre;
+    line-height: 1.2;
+    opacity: 0.6;
+}
+
+/* Matrix characters content - using CSS generated content */
+.matrix-column::before {
+    content: '0\A1\A{\A}\A<\A>\A[\A]\A(\A)\A;\A:\A=\A+\A-\A*\A/\Avar\Afn\Aif\Afor\A0\A1\Aconst\Alet\A=>\A{}\A<>\A()';
+    white-space: pre;
+    display: block;
+    animation: matrix-glow 3s ease-in-out infinite;
+}
+
+/* Create different column variations with different characters */
+.matrix-column:nth-child(odd)::before {
+    content: '1\A0\A}\A{\A>\A<\A]\A[\A)\A(\A:\A;\A=\A-\A+\A/\A*\Alet\Avar\Afn\Aif\A1\A0\Aconst\Afor\A{}\A<>\A()';
+}
+
+.matrix-column:nth-child(3n)::before {
+    content: 'async\Aawait\Amap\Afilter\Aimport\Aexport\Areturn\Aclass\A0\A1\A{\A}\A[\A]\A(\A)\A;';
+}
+
+.matrix-column:nth-child(4n)::before {
+    content: 'React\ANode\ANext\AMongo\AExpress\A=>\Avar\Aconst\Afn\A0\A1\A<\A>\A{\A}';
+}
+
+.matrix-column:nth-child(5n)::before {
+    content: '101\A010\A110\A001\Avar\Alet\Aconst\A=>\A{}\A<>\Aif\Afor\A0\A1';
+}
+
+/* Matrix falling animation */
+@keyframes matrix-fall {
+    0% {
+        top: -100%;
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0.6;
+    }
+
+    95% {
+        opacity: 0.6;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Matrix glow pulse animation */
+@keyframes matrix-glow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 8px #8b5cf6, 0 0 12px #8b5cf6;
+        color: #8b5cf6;
+    }
+
+    50% {
+        text-shadow: 0 0 12px #a855f7, 0 0 16px #a855f7, 0 0 20px #8b5cf6;
+        color: #a855f7;
+    }
+}
+
+/* Color variations for different columns */
+.matrix-column:nth-child(2n) {
+    color: #a855f7;
+    text-shadow: 0 0 8px #a855f7;
+}
+
+.matrix-column:nth-child(3n) {
+    color: #9333ea;
+    text-shadow: 0 0 8px #9333ea;
+}
+
+.matrix-column:nth-child(4n) {
+    color: #7c3aed;
+    text-shadow: 0 0 8px #7c3aed;
+}
+
+.matrix-column:nth-child(5n) {
+    color: #c084fc;
+    text-shadow: 0 0 8px #c084fc;
+}
+
+/* Profile Container Styles */
+.profile-container {
+    position: relative;
+}
+
+/* Wave Hand Animation */
+.wave-hand {
+    display: inline-block;
+    animation: wave 2.5s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10%,
+    30% {
+        transform: rotate(14deg);
+    }
+
+    20%,
+    40% {
+        transform: rotate(-8deg);
+    }
+
+    50% {
+        transform: rotate(14deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Typing Container */
+.typing-container {
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    width: 32px;
+    height: 52px;
+    border: 2px solid rgba(139, 92, 246, 0.4);
+    border-radius: 20px;
+    position: relative;
+    animation: scroll-fade 2.5s ease-in-out infinite;
+    backdrop-filter: blur(4px);
+    background: rgba(15, 23, 42, 0.3);
+}
+
+.scroll-dot {
+    width: 7px;
+    height: 7px;
+    background: linear-gradient(to bottom, #8b5cf6, #a855f7);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-down 2.5s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+}
+
+@keyframes scroll-down {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    50% {
+        top: 32px;
+        opacity: 0.3;
+    }
+
+    100% {
+        top: 8px;
+        opacity: 1;
+    }
+}
+
+@keyframes scroll-fade {
+
+    0%,
+    100% {
+        opacity: 0.4;
+        border-color: rgba(139, 92, 246, 0.4);
+    }
+
+    50% {
+        opacity: 1;
+        border-color: rgba(139, 92, 246, 0.8);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .matrix-column {
+        font-size: 14px;
+        width: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .matrix-column {
+        font-size: 12px;
+        width: 16px;
+        opacity: 0.5;
+    }
+
+    /* Hide every other column on tablets for better performance */
+    .matrix-column:nth-child(2n) {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .matrix-column {
+        font-size: 11px;
+        width: 14px;
+        opacity: 0.4;
+    }
+
+    /* Show even fewer columns on mobile */
+    .matrix-column:nth-child(3n),
+    .matrix-column:nth-child(4n) {
+        display: none;
+    }
+
+    .scroll-indicator {
+        width: 28px;
+        height: 48px;
+    }
+
+    .scroll-dot {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* Ultra-wide screens - add more visual density */
+@media (min-width: 1920px) {
+    .matrix-column {
+        font-size: 18px;
+        width: 22px;
+    }
+}
+
+/* Performance optimization for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .matrix-column,
+    .wave-hand,
+    .scroll-indicator,
+    .scroll-dot {
+        animation: none;
+    }
+
+    .matrix-column {
+        opacity: 0.15;
+        position: static;
+    }
+
+    .matrix-column::before {
+        animation: none;
+    }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+    .matrix-column {
+        color: #a855f7;
+        text-shadow: 0 0 12px #a855f7;
+        opacity: 0.8;
+    }
+}
+
+/* Dark mode specific adjustments (if needed) */
+@media (prefers-color-scheme: dark) {
+    .matrix-column {
+        opacity: 0.7;
+    }
+}
