@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Ovo } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer/Footer";
 
 const outFit = Outfit({
   subsets: ["latin"], weight: ["400", "500", "600", "700"],
