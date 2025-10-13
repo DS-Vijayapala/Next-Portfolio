@@ -1,6 +1,115 @@
 export const Projects = [
 
   {
+    id: "project-z-job-portal",
+    title: "Zipher.lk",
+    description: `
+    <h2><b>Why I Chose This Project</b></h2>
+    <p>
+      I developed <strong>Project Z</strong> to address the growing need for a centralized job and HRM platform. 
+      Many job portals lack real HR management integration, so I aimed to build a system connecting 
+      job seekers and employers with automation, scalability, and cloud integration.
+    </p>
+
+    <h3>Evolution to Microservices</h3>
+    <p>
+      Initially, <strong>Zipher.lk</strong> was built using a <strong>monolithic architecture</strong>. 
+      As the platform grew, scalability and service management became more critical — leading to a 
+      complete migration to a <strong>microservices architecture</strong>. 
+      This transition allows independent service deployment, better fault isolation, and enhanced 
+      system performance, aligning with enterprise-level scalability standards.
+    </p>
+
+    <h3>Benefits & Future Enhancements</h3>
+    <p>
+      The platform simplifies hiring, job posting, and application tracking for both users and companies. 
+      The next phase involves building a <strong>mobile app</strong> with push notifications for job alerts 
+      and integrating <strong>AI-based candidate matching</strong> and <strong>resume parsing</strong> 
+      features for employers.
+    </p>
+
+    <h3>Technology Stack</h3>
+    <p>
+      Powered by <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB</strong> on the backend, 
+      with a <strong>React</strong> frontend styled using <strong>Tailwind CSS</strong>. 
+      The new microservices setup uses <strong>Docker</strong> for containerization, 
+      <strong>Kafka</strong> (need to implementation) for inter-service communication, and <strong>JWT</strong> for secure authentication.
+    </p>
+  `,
+    short_description: "A scalable job portal evolving from a monolithic structure to a microservices-based architecture.",
+    bgImage: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "React",
+      "Mongoose",
+      "Tailwind CSS",
+      "Docker",
+      "Kafka",
+      "JWT",
+      "AWS",
+      "CI/CD"
+    ],
+    github: "",
+    live: "https://zipher.lk",
+    date: "2025",
+    project_status: false,
+    architecture: "Microservices",
+    frammework: "Turborepo"
+  },
+  {
+    id: "advanced-ecommerce-platform",
+    title: "Advanced E-Commerce Platform – Microservices Architecture",
+    description: `
+    <h3>Why I Chose This Project</h3>
+    <p>
+      I started the <strong>Advanced E-Commerce Platform</strong> project to gain a deep, practical 
+      understanding of <strong>microservices architecture</strong> and how modern web applications 
+      can scale efficiently across distributed services. This project focuses on modularity, 
+      scalability, and cloud-native deployment using a <strong>monorepo (Turborepo)</strong> structure.
+    </p>
+
+    <h3>Benefits & Future Enhancements</h3>
+    <p>
+      The platform offers high performance through <strong>Kafka-based communication</strong>, 
+      <strong>real-time updates</strong> via WebSockets, and <strong>AI-powered recommendations</strong> 
+      using TensorFlow.js. Upcoming improvements include enhanced <strong>observability</strong> 
+      with Prometheus & Grafana, <strong>multi-region deployment</strong>, and advanced <strong>CI/CD automation</strong>.
+    </p>
+
+    <h3>Technology Stack</h3>
+    <p>
+      Built with <strong>Express.js</strong> for the backend and <strong>Next.js</strong> for the frontend. 
+      Uses <strong>MongoDB</strong> and <strong>Redis</strong> as databases, <strong>Kafka</strong> 
+      for event-driven messaging, <strong>TensorFlow</strong> for ML integrations, and 
+      <strong>Docker</strong> for containerization. The system is managed through 
+      <strong>AWS</strong> deployment, <strong>Cloudflare</strong> for domain management, 
+      and <strong>CI/CD pipelines</strong> for continuous integration.
+    </p>
+  `,
+    short_description: "A cloud-native e-commerce platform built with microservices architecture and Turborepo for scalability and modularity.",
+    bgImage: "https://images.pexels.com/photos/6995134/pexels-photo-6995134.jpeg",
+    technologies: [
+      "Next.js",
+      "Express.js",
+      "TensorFlow",
+      "Kafka",
+      "MongoDB",
+      "Redis",
+      "Firebase",
+      "Docker",
+      "Prisma ORM",
+      "Turborepo"
+    ],
+    github: "",
+    live: "",
+    date: "2025",
+    project_status: false,
+    architecture: "Microservices",
+    frammework: "Turborepo"
+  },
+  {
     id: "zipher-media-social-platform",
     title: "Zipher Media – Social Platform",
     description: `
@@ -28,46 +137,10 @@ export const Projects = [
     </p>
   `,
     short_description: "A modern social media prototype focusing on content sharing, engagement, and a distraction-free UI.",
-    bgImage: "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg",
+    bgImage: "https://images.pexels.com/photos/5053740/pexels-photo-5053740.jpeg",
     technologies: ["React", "Clerk", "Express.js", "Mongoose", "MongoDB", "Node.js", "Cloudinary", "Redux", "Axios", "Inngest"],
     github: "https://github.com/DS-Vijayapala/Project-ZM",
     live: "",
-    date: "2025",
-    project_status: true,
-    architecture: "Monolithic",
-    frammework: "Vite"
-  },
-
-  {
-    id: "project-z-job-portal",
-    title: "Zipher.lk - Job Portal",
-    description: `
-      <h2><b>Why I Chose This Project</b></h2>
-      <p>
-        I developed <strong>Project Z</strong> to address the growing need for a centralized job and HRM platform. 
-        Many job portals lack real HR management integration, so I aimed to build a system connecting 
-        job seekers and employers with automation and scalability.
-      </p>
-
-      <h3>Benefits & Future Enhancements</h3>
-      <p>
-        This platform simplifies hiring, job posting, and application tracking for both users and companies. 
-        I plan to build a <strong>mobile app</strong> with push notifications for job alerts 
-        and introduce AI-based candidate matching for employers.
-      </p>
-
-      <h3>Technology Stack</h3>
-      <p>
-        Powered by <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB</strong> on the backend, 
-        with a <strong>React</strong> frontend styled using <strong>Tailwind CSS</strong>. 
-        <strong>JWT</strong> and <strong>Clerk Auth</strong> handle authentication securely.
-      </p>
-    `,
-    short_description: "A modern job portal and HR system connecting employers and job seekers with real-time hiring features.",
-    bgImage: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg",
-    technologies: ["Node.js", "Express.js", "MongoDB", "React", "Mongoose", "Tailwind CSS", "0Auth", "Toastify", "JWT", "Corn"],
-    github: "",
-    live: "https://zipher.lk",
     date: "2025",
     project_status: true,
     architecture: "Monolithic",
