@@ -17,31 +17,9 @@ const Project = () => {
             className="relative w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2
              overflow-hidden bg-slate-900"
         >
-            {/* Animated Background Elements - Pure CSS */}
-
-            <div className="relative inset-0 -z-10">
-
-                {/* Gradient Orbs */}
-
-                <div className="gradient-orb-1" />
-
-                <div className="gradient-orb-2" />
-
-                {/* Floating Particles */}
-
-                <div className="floating-particle floating-particle-1" />
-
-                <div className="floating-particle floating-particle-2" />
-
-                <div className="floating-particle floating-particle-3" />
-
-                <div className="floating-particle floating-particle-4" />
-
-                <div className="floating-particle floating-particle-5" />
-
-                <div className="floating-particle floating-particle-6" />
-
-            </div>
+            <div className="theme-bg-orb theme-bg-orb-1" />
+            <div className="theme-bg-orb theme-bg-orb-2" />
+            <div className="theme-bg-grid" />
 
             {/* Main Content */}
 
@@ -83,7 +61,7 @@ const Project = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
-                        className="text-2xl sm:text-3xl lg:text-3xl font-bold text-slate-200 mb-6"
+                        className="text-xl sm:text-xl lg:text-xl font-bold text-slate-200 mb-6"
                     >
 
                         <span className="font-bold bg-gradient-to-r

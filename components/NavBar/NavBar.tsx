@@ -1,9 +1,10 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { Menu, X, ArrowRight, Code } from 'lucide-react'
+import { Menu, X, ArrowRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function NavBar() {
 
@@ -39,13 +40,24 @@ function NavBar() {
 
     const isActive = (path: string) => pathname === path
 
+    useEffect(() => {
+        setMenuOpen(false)
+    }, [pathname])
+
+    useEffect(() => {
+        document.body.style.overflow = menuOpen ? "hidden" : ""
+        return () => {
+            document.body.style.overflow = ""
+        }
+    }, [menuOpen])
+
     return (
 
         <>
 
             {/* Main Navigation */}
 
-            <nav className={`w-full sticky z-50 top-0 h-[60px] flex items-center justify-between 
+            <nav className={`w-full sticky z-[120] top-0 h-[60px] flex items-center justify-between 
             px-6 md:px-16 lg:px-24 xl:px-32 transition-all duration-300
             ${scrolled
                     ? 'bg-slate-900/95 backdrop-blur-xl shadow-lg'
@@ -54,15 +66,19 @@ function NavBar() {
 
                 {/* Logo */}
 
-                <a href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
-
-                    <Code className='w-10 h-10 cursor-pointer text-violet-400' />
-
-                </a>
+                <Link href="/" className="flex items-center transition-transform duration-300 hover:scale-105">
+                    <Image
+                        src="/icon.png"
+                        alt="Logo"
+                        width={38}
+                        height={38}
+                        className="rounded-lg"
+                    />
+                </Link>
 
                 {/* Desktop Menu */}
 
-                <ul className='hidden md:flex items-center space-x-8 md:pl-28 text-slate-200'>
+                <ul className='hidden md:flex items-center space-x-8 md:pl-28 text-slate-200 text-sm'>
 
                     <li>
 
@@ -171,6 +187,7 @@ function NavBar() {
                         className='inline-block md:hidden w-10 h-10 items-center justify-center
                         text-slate-200 active:scale-90 transition-transform duration-200'
                         aria-label="Open menu"
+                        aria-expanded={menuOpen}
                     >
 
                         <Menu className='w-7 h-7' />
@@ -181,11 +198,17 @@ function NavBar() {
 
                 {/* Mobile Menu */}
 
-                <div className={`absolute top-[60px] left-0 w-full bg-slate-900 
-                shadow-lg md:hidden transition-all duration-300 overflow-hidden
-                ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                {menuOpen && (
+                    <>
+                        <div
+                            className="fixed inset-0 top-[60px] bg-slate-950/40 backdrop-blur-[1px] md:hidden z-[190]"
+                            onClick={closeMenu}
+                        />
 
-                    <div className="p-6">
+                        <div className="fixed top-[60px] left-0 w-full bg-slate-900 border-t border-slate-800
+                        shadow-lg md:hidden z-[200]">
+
+                            <div className="p-6">
 
                         {/* Close Button */}
 
@@ -283,9 +306,11 @@ function NavBar() {
 
                         </Link>
 
-                    </div>
+                            </div>
 
-                </div>
+                        </div>
+                    </>
+                )}
 
             </nav>
 

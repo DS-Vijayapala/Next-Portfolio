@@ -1,5 +1,6 @@
 import React from 'react';
-import { Mail, Github, Linkedin, Heart, Code2 } from 'lucide-react';
+import { Mail, Github, Linkedin, Heart } from 'lucide-react';
+import Image from 'next/image';
 
 function Footer() {
 
@@ -32,12 +33,13 @@ function Footer() {
 
                         <div className="flex items-center gap-2">
 
-                            <div className="p-2 rounded-lg bg-gradient-to-br
-                             from-violet-600 to-purple-600">
-
-                                <Code2 className="w-5 h-5 text-white" />
-
-                            </div>
+                            <Image
+                                src="/icon.png"
+                                alt="Logo"
+                                width={34}
+                                height={34}
+                                className="rounded-lg"
+                            />
 
                             <span className="text-xl font-bold text-slate-100">Portfolio</span>
 

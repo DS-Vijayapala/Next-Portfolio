@@ -21,7 +21,7 @@ const ProjectDetails = () => {
 
             <div className="flex items-center justify-center min-h-screen text-slate-300">
 
-                <h1 className="text-2xl font-semibold">Project Not Found</h1>
+                <h1 className="text-xl font-semibold">Project Not Found</h1>
 
             </div>
 

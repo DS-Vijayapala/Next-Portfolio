@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Github, Calendar, CheckCircle2, Clock, Layers, ScrollText } from 'lucide-react';
+import Link from 'next/link';
 
 interface Project {
     title: string;
@@ -199,7 +200,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
                     )}
 
-                    <a
+                    <Link
                         href={`/all-projects/${project.id || title.toLowerCase().replace(/\s+/g, '-')}`}
                         className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r
                          from-violet-600 to-purple-600 text-white text-sm font-medium
@@ -211,7 +212,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
                         View Project
 
-                    </a>
+                    </Link>
 
                 </div>
 

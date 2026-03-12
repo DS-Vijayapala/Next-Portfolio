@@ -12,6 +12,7 @@ import {
     Code2,
     Sparkles,
 } from "lucide-react"
+import Link from "next/link"
 import "./projectDetailBackground.css"
 
 interface Project {
@@ -46,24 +47,9 @@ const ProjectDetailPage = ({ project }: { project: Project }) => {
 
         <div className="relative min-h-screen w-full bg-slate-900 overflow-hidden">
 
-            {/* Animated Background */}
-
-            <div className="absolute inset-0 -z-10">
-
-                <div className="detail-gradient-orb-1" />
-                <div className="detail-gradient-orb-2" />
-                <div className="detail-gradient-orb-3" />
-                <div className="detail-grid-pattern" />
-                <div className="detail-particle detail-particle-1" />
-                <div className="detail-particle detail-particle-2" />
-                <div className="detail-particle detail-particle-3" />
-                <div className="detail-particle detail-particle-4" />
-                <div className="detail-particle detail-particle-5" />
-                <div className="light-ray light-ray-1" />
-                <div className="light-ray light-ray-2" />
-                <div className="light-ray light-ray-3" />
-
-            </div>
+            <div className="theme-bg-orb theme-bg-orb-1" />
+            <div className="theme-bg-orb theme-bg-orb-2" />
+            <div className="theme-bg-grid" />
 
             {/* Main Content */}
 
@@ -71,8 +57,8 @@ const ProjectDetailPage = ({ project }: { project: Project }) => {
 
                 {/* Back Button */}
 
-                <button
-                    onClick={() => window.history.back()}
+                <Link
+                    href="/all-projects"
                     className="group flex items-center gap-2 text-slate-400
                      hover:text-violet-400 transition-colors duration-300 mb-10 
                      cursor-pointer">
@@ -82,7 +68,7 @@ const ProjectDetailPage = ({ project }: { project: Project }) => {
 
                     <span className="text-sm font-medium">Back to Projects</span>
 
-                </button>
+                </Link>
 
                 {/* Hero Section */}
 
@@ -190,7 +176,7 @@ const ProjectDetailPage = ({ project }: { project: Project }) => {
 
                         {/* Project Title */}
 
-                        <h1 className="text-2xl lg:text-3xl font-bold text-slate-100 leading-tight">
+                        <h1 className="text-xl lg:text-xl font-bold text-slate-100 leading-tight">
 
                             {title}
 

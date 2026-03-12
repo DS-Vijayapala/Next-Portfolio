@@ -66,7 +66,7 @@ function Hero() {
                     <Image
                         src={assets.default_image}
                         alt="Dineth Profile"
-                        className="relative w-32 sm:w-40 md:w-48 rounded-full border-4
+                        className="relative w-24 sm:w-32 md:w-40 rounded-full border-4
                          border-violet-500/50 shadow-2xl shadow-purple-500/30"
                     />
 
@@ -84,7 +84,7 @@ function Hero() {
                     initial={{ y: -20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-lg sm:text-xl md:text-2xl text-slate-300"
+                    className="text-lg sm:text-xl md:text-xl text-slate-300"
                 >
 
                     <span className="wave-hand">👋</span> Hello, I'm{' '}
@@ -99,7 +99,7 @@ function Hero() {
 
                 {/* Typing Animation with Gradient */}
 
-                <div className="typing-container">
+                <div className="typing-container -mt-3">
 
                     <TypeAnimation
                         sequence={[
@@ -109,7 +109,7 @@ function Hero() {
                         wrapper="h1"
                         speed={25}
                         repeat={Infinity}
-                        className="text-2xl sm:text-4xl lg:text-6xl font-bold bg-gradient-to-r
+                        className="text-xl sm:text-2xl lg:text-2xl font-bold bg-gradient-to-r
                          from-white via-slate-200 to-slate-300 bg-clip-text text-transparent leading-tight"
                     />
 
