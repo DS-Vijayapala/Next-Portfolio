@@ -11,23 +11,33 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { Slider } from "@/components/ui/slider";
 import "./Contact.css";
 
 type ContactFormValues = {
   name: string;
   email: string;
   message: string;
+  budget: number;
 };
 
 function Contact() {
   const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormValues>();
+  } = useForm<ContactFormValues>({
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+      budget: 200,
+    },
+  });
 
   const onSubmit = async (values: ContactFormValues) => {
     try {
@@ -35,6 +45,7 @@ function Contact() {
       formData.append("name", values.name);
       formData.append("email", values.email);
       formData.append("message", values.message);
+      formData.append("budget", String(values.budget));
       formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "");
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -199,6 +210,34 @@ function Contact() {
                 <p className="mt-1 text-xs text-rose-300">{errors.message.message}</p>
               )}
             </div>
+
+            <Controller
+              name="budget"
+              control={control}
+              render={({ field }) => (
+                <div className="mt-4 rounded-xl border border-violet-500/20 bg-slate-900/45 p-4">
+                  <div className="flex items-center justify-between gap-4">
+                    <p className="text-sm font-medium text-slate-200">Project Budget</p>
+                    <span className="text-sm font-semibold text-violet-300">
+                      ${field.value.toLocaleString()}
+                    </span>
+                  </div>
+
+                  <Slider
+                    value={[field.value]}
+                    min={100}
+                    max={20000}
+                    step={500}
+                    onValueChange={(value) => field.onChange(value[0] ?? 200)}
+                    className="mt-3 [&_[data-slot=slider-range]]:bg-violet-500 [&_[data-slot=slider-thumb]]:border-violet-300 [&_[data-slot=slider-thumb]]:bg-white [&_[data-slot=slider-track]]:bg-slate-700"
+                  />
+
+                  <p className="mt-2 text-xs text-slate-500">
+                    Drag to estimate your approximate budget range.
+                  </p>
+                </div>
+              )}
+            />
 
             <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               <p className="text-xs text-slate-500 sm:max-w-[65%]">
