@@ -221,10 +221,11 @@ const projects = [
 ];
 
 async function main() {
-  for (const project of projects) {
+  for (const [index, project] of projects.entries()) {
     await prisma.project.upsert({
       where: { slug: project.slug },
       update: {
+        sortOrder: index + 1,
         title: project.title,
         shortDescription: project.shortDescription,
         description: project.description,
@@ -240,6 +241,7 @@ async function main() {
       },
       create: {
         slug: project.slug,
+        sortOrder: index + 1,
         title: project.title,
         shortDescription: project.shortDescription,
         description: project.description,

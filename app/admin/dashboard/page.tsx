@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import DeleteProjectButton from "@/components/admin/DeleteProjectButton";
+import ProjectOrderManager from "@/components/admin/ProjectOrderManager";
 import {
   Table,
   TableBody,
@@ -15,7 +16,7 @@ import {
 
 export default async function AdminDashboardPage() {
   const [projects, totalCount, completedCount] = await Promise.all([
-    prisma.project.findMany({
+    prisma.project.findMany(({
       orderBy: { updatedAt: "desc" },
       select: {
         id: true,
@@ -23,14 +24,16 @@ export default async function AdminDashboardPage() {
         slug: true,
         date: true,
         projectStatus: true,
+        sortOrder: true,
       },
-    }) as Promise<
+    } as never)) as Promise<
       Array<{
         id: string;
         title: string;
         slug: string;
         date: string;
         projectStatus: boolean;
+        sortOrder?: number;
       }>
     >,
     prisma.project.count(),
@@ -134,6 +137,22 @@ export default async function AdminDashboardPage() {
               )}
             </TableBody>
           </Table>
+        </CardContent>
+      </Card>
+
+      <Card className="border-slate-700 bg-slate-900/80 text-slate-100 ring-0">
+        <CardHeader>
+          <CardTitle className="text-base">Project Display Order</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ProjectOrderManager
+            projects={projects.map((project) => ({
+              id: project.id,
+              title: project.title,
+              slug: project.slug,
+              sortOrder: project.sortOrder,
+            }))}
+          />
         </CardContent>
       </Card>
     </section>

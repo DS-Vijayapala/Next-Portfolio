@@ -9,6 +9,7 @@ const AllProjects = async () => {
     }) as Array<{
         id: string
         slug: string
+        sortOrder?: number
         title: string
         description: string
         shortDescription: string | null
@@ -23,6 +24,7 @@ const AllProjects = async () => {
     const mappedProjects = projects.map((project) => ({
         id: project.id,
         slug: project.slug,
+        sortOrder: project.sortOrder ?? 0,
         title: project.title,
         description: project.description,
         short_description: project.shortDescription || '',
@@ -34,8 +36,15 @@ const AllProjects = async () => {
         architecture: project.architecture || 'Monolithic',
     }))
 
-    const finalProjects = mappedProjects.length > 0
-        ? mappedProjects
+    const orderedProjects = [...mappedProjects].sort((a, b) => {
+        const ao = a.sortOrder || Number.MAX_SAFE_INTEGER
+        const bo = b.sortOrder || Number.MAX_SAFE_INTEGER
+        if (ao !== bo) return ao - bo
+        return 0
+    })
+
+    const finalProjects = orderedProjects.length > 0
+        ? orderedProjects
         : StaticProjects.map((project) => ({
             id: project.id || '',
             slug: project.id || '',

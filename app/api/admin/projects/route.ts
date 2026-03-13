@@ -64,9 +64,16 @@ export async function POST(request: Request) {
       );
     }
 
+    const latestProject = (await prisma.project.findFirst({
+      orderBy: { sortOrder: "desc" },
+      select: { sortOrder: true },
+    } as never)) as { sortOrder?: number } | null;
+    const nextSortOrder = (latestProject?.sortOrder ?? 0) + 1;
+
     const createData = {
       title: body.title.trim(),
       slug,
+      sortOrder: nextSortOrder,
       shortDescription: body.shortDescription?.trim() || "",
       description: body.description,
       bgImage: images[0],
