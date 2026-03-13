@@ -12,6 +12,7 @@ interface Project {
     project_status: boolean;
     architecture: string;
     id?: string;
+    slug?: string;
     short_description?: string
 }
 
@@ -21,7 +22,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
     const {
         title,
-        description,
         bgImage,
         technologies,
         github,
@@ -34,42 +34,25 @@ const ProjectCard = ({ project }: { project: Project }) => {
     return (
 
         <div
-            className="group relative w-full aspect-square rounded-2xl overflow-hidden
-             bg-slate-800/50 backdrop-blur-sm border border-slate-700/50
-              hover:border-violet-500/50 transition-all duration-500"
+            className="group relative flex h-full w-full flex-col overflow-hidden rounded-2xl border border-slate-700/70
+             bg-gradient-to-b from-slate-900/90 to-slate-950/90 backdrop-blur-md
+             transition-all duration-500 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-500/10"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-
-            {/* Background Image with Overlay */}
-
-            <div className="absolute inset-0">
-
+            <div className="relative h-40 overflow-hidden">
                 <img
                     src={bgImage}
                     alt={title}
-                    className="w-full h-full object-cover transition-transform 
-                    duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
-                {/* Dark Gradient Overlay */}
-
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-800
-                 via-slate-900/95 to-slate-900/60" />
-
-                {/* Hover Gradient Effect */}
-
-                <div className={`absolute inset-0 bg-gradient-to-t from-violet-800/40
-                     via-purple-900/20 to-transparent transition-opacity duration-500
-                      ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/50 to-transparent" />
             </div>
 
-            {/* Status Badge - Top Left */}
-
-            <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
-
-                <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs
-                 font-medium backdrop-blur-md border ${project_status
+            <div className="absolute left-4 top-4 z-20 flex items-center gap-2">
+                <div className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs
+                 font-medium backdrop-blur-md ${project_status
                         ? 'bg-emerald-500/20 border-emerald-500/30 text-emerald-300'
                         : 'bg-amber-500/20 border-amber-500/30 text-amber-300'}`}>
 
@@ -90,13 +73,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     )}
 
                 </div>
-
             </div>
 
-            {/* Architecture Badge - Top Right */}
-
             <div className="absolute top-4 right-4 z-20">
-
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full
                  text-xs font-medium backdrop-blur-md bg-violet-500/20 border
                   border-violet-500/30 text-violet-300">
@@ -106,132 +85,86 @@ const ProjectCard = ({ project }: { project: Project }) => {
                     {architecture}
 
                 </div>
-
             </div>
 
-            {/* Content Container */}
+            <div className="flex flex-col flex-grow p-4">
+                <div className="space-y-3">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{date}</span>
+                    </div>
 
-            <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
+                    <h3 className="text-lg font-bold text-slate-100 line-clamp-2
+                     group-hover:text-white transition-colors duration-300">
+                        {title}
+                    </h3>
 
-                {/* Year Badge */}
+                    <p className={`line-clamp-2 text-sm text-slate-400 leading-relaxed transition-all duration-500 
+                    ${isHovered ? 'opacity-100' : 'opacity-90'}`}>
+                        {short_description}
+                    </p>
 
-                <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-3">
+                    <div className={`flex flex-wrap gap-2 transition-all duration-500 
+                    ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
+                        {technologies.slice(0, 4).map((tech, index) => (
+                            <span
+                                key={index}
+                                className="px-2.5 py-1 rounded-md text-xs font-medium
+                                 bg-slate-800/80 backdrop-blur-sm text-violet-300 
+                                 border border-violet-500/20"
+                            >
 
-                    <Calendar className="w-3.5 h-3.5" />
+                                {tech}
 
-                    <span>{date}</span>
+                            </span>
+                        ))}
 
+                        {technologies.length > 4 && (
+                            <span className="px-2.5 py-1 rounded-md text-xs font-medium
+                             bg-slate-800/80 backdrop-blur-sm text-slate-400 border
+                              border-slate-600/20">
+                                +{technologies.length - 4}
+                            </span>
+                        )}
+                    </div>
                 </div>
 
-                {/* Title */}
-
-                <h3 className="text-xl font-bold text-slate-100 mb-2 line-clamp-2
-                 group-hover:text-white transition-colors duration-300">
-
-                    {title}
-
-                </h3>
-
-                {/* Description */}
-
-                <p className={`text-sm text-slate-400 leading-relaxed mb-4 transition-all duration-500 
-                ${isHovered ? 'line-clamp-3 opacity-100' : 'line-clamp-2 opacity-90'}`}>
-
-                    {short_description}
-
-                </p>
-
-                {/* Technologies */}
-
-                <div className={`flex flex-wrap gap-2 mb-4 transition-all duration-500 
-                ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}>
-
-                    {technologies.slice(0, 4).map((tech, index) => (
-
-                        <span
-                            key={index}
-                            className="px-2.5 py-1 rounded-md text-xs font-medium
-                             bg-slate-800/80 backdrop-blur-sm text-violet-300 
-                             border border-violet-500/20"
-                        >
-
-                            {tech}
-
-                        </span>
-
-                    ))}
-
-                    {technologies.length > 4 && (
-
-                        <span className="px-2.5 py-1 rounded-md text-xs font-medium
-                         bg-slate-800/80 backdrop-blur-sm text-slate-400 border
-                          border-slate-600/20">
-
-                            +{technologies.length - 4}
-
-                        </span>
-
-                    )}
-
-                </div>
-
-                {/* Action Buttons */}
-
-                <div className="flex items-center gap-3">
-
+                <div className="mt-auto pt-4 flex flex-nowrap items-center gap-2">
                     {github && (
-
                         <a
                             href={github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 rounded-lg
+                            className="shrink-0 flex items-center gap-2 px-3 py-2 rounded-lg whitespace-nowrap
                              bg-slate-800/80 backdrop-blur-sm text-slate-200 
                              text-sm font-medium border border-slate-600/50
                               hover:border-violet-500/50 hover:bg-violet-500/10
                                hover:text-violet-300 transition-all duration-300"
                         >
-
                             <Github className="w-4 h-4" />
-
                             Code
-
                         </a>
-
                     )}
 
                     <Link
-                        href={`/all-projects/${project.id || title.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r
+                        href={`/all-projects/${project.slug || project.id || title.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="shrink-0 flex items-center gap-2 px-3 py-2 rounded-lg whitespace-nowrap bg-gradient-to-r
                          from-violet-600 to-purple-600 text-white text-sm font-medium
                           hover:from-purple-600 hover:to-pink-600 hover:shadow-lg
                            hover:shadow-purple-500/30 transition-all duration-300"
                     >
-
                         <ScrollText className="w-4 h-4" />
-
                         View Project
-
                     </Link>
-
                 </div>
-
             </div>
-
-            {/* Glow Effect on Hover */}
 
             <div className={`absolute inset-0 rounded-2xl transition-opacity duration-500 pointer-events-none 
             ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-
                 <div className="absolute inset-0 rounded-2xl shadow-2xl shadow-violet-500/20" />
-
             </div>
-
         </div>
-
     );
-
 };
-
 
 export default ProjectCard;

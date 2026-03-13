@@ -1,144 +1,117 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { Sparkles, Code2, Rocket } from "lucide-react";
-import "./projectBackground.css";
+import { motion } from "motion/react";
+import { Sparkles, Code2, BriefcaseBusiness } from "lucide-react";
 import ProjectCard from "../ProjectCard";
-import { Projects } from "@/actions/projects";
 
-const Project = () => {
+type ProjectItem = {
+    id: string;
+    slug: string;
+    title: string;
+    description: string;
+    short_description?: string;
+    bgImage: string;
+    technologies: string[];
+    github?: string;
+    date: string;
+    project_status: boolean;
+    architecture: string;
+};
 
-    const projects = Projects
+const Project = ({ projects }: { projects: ProjectItem[] }) => {
+    const completedCount = projects.filter((project) => project.project_status).length;
+    const ongoingCount = projects.length - completedCount;
 
     return (
         <div
             id="Projects"
             className="relative w-full px-4 sm:px-10 lg:px-[12%] py-20 scroll-mt-2
-             overflow-hidden bg-slate-900"
+             overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
         >
             <div className="theme-bg-orb theme-bg-orb-1" />
             <div className="theme-bg-orb theme-bg-orb-2" />
             <div className="theme-bg-grid" />
 
-            {/* Main Content */}
-
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.6 }}
                 className="relative z-10"
             >
-
-                {/* Header Section */}
-
-                <div className="text-center mb-16">
-
-                    {/* Badge with Icon */}
-
+                <div className="mx-auto mb-14 max-w-5xl text-center">
                     <motion.div
-                        initial={{ y: -20, opacity: 0 }}
+                        initial={{ y: -12, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full
-                         bg-gradient-to-r from-violet-500/10 to-purple-600/10 border
-                          border-violet-500/20 mb-4"
+                        transition={{ duration: 0.4 }}
+                        className="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-500/25
+                         bg-violet-500/10 px-4 py-2"
                     >
-
                         <Sparkles className="w-4 h-4 text-violet-400" />
-
-                        <span className="text-sm font-medium text-violet-400">
-
-                            My Latest Works
-
+                        <span className="text-sm font-medium text-violet-300">
+                            Selected Work
                         </span>
-
                     </motion.div>
 
-                    {/* Main Heading */}
-
                     <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.5 }}
-                        className="text-xl sm:text-xl lg:text-xl font-bold text-slate-200 mb-6"
+                        transition={{ duration: 0.45, delay: 0.1 }}
+                        className="mb-5 text-xl font-semibold text-slate-100"
                     >
-
-                        <span className="font-bold bg-gradient-to-r
-                         from-white via-slate-200 to-slate-300 bg-clip-text text-transparent">
-
+                        <span className="bg-gradient-to-r from-slate-50 via-slate-200 to-slate-300 bg-clip-text text-transparent">
                             Featured Projects
-
                         </span>
-
                     </motion.h2>
 
-                    {/* Description */}
-
                     <motion.p
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6, duration: 0.5 }}
-                        className="max-w-3xl mx-auto text-sm sm:text-sm text-slate-400 leading-relaxed"
+                        transition={{ duration: 0.45, delay: 0.2 }}
+                        className="mx-auto max-w-3xl text-sm leading-7 text-slate-400"
                     >
-
-                        I provide a wide range of modern development services, focusing on
-                        performance, accessibility, and design excellence. My work includes
-                        responsive UIs, dynamic web applications, and full-stack systems
-                        optimized for real-world use. Each project emphasizes clean code,
-                        scalability, and user experience.
-
+                        A curated set of production-focused projects covering modern UI engineering,
+                        full-stack architecture, and scalable backend systems built for real-world use.
                     </motion.p>
 
-                    {/* Stats Bar */}
-
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.5 }}
-                        className="flex flex-wrap items-center justify-center gap-8 mt-10"
+                        transition={{ duration: 0.45, delay: 0.3 }}
+                        className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3"
                     >
-
-                        <div className="flex items-center gap-2 text-slate-300">
+                        <div className="flex items-center justify-center gap-2 rounded-xl border border-slate-700/70 bg-slate-800/50 px-4 py-3 text-slate-300">
                             <Code2 className="w-5 h-5 text-violet-400" />
                             <span className="text-sm font-medium">Clean Code</span>
                         </div>
 
-                        <div className="flex items-center gap-2 text-slate-300">
-                            <Rocket className="w-5 h-5 text-purple-400" />
-                            <span className="text-sm font-medium">Scalable Solutions</span>
+                        <div className="flex items-center justify-center gap-2 rounded-xl border border-slate-700/70 bg-slate-800/50 px-4 py-3 text-slate-300">
+                            <BriefcaseBusiness className="w-5 h-5 text-purple-300" />
+                            <span className="text-sm font-medium">{projects.length} Projects</span>
                         </div>
 
-                        <div className="flex items-center gap-2 text-slate-300">
+                        <div className="flex items-center justify-center gap-2 rounded-xl border border-slate-700/70 bg-slate-800/50 px-4 py-3 text-slate-300">
                             <Sparkles className="w-5 h-5 text-pink-400" />
-                            <span className="text-sm font-medium">Modern Design</span>
+                            <span className="text-sm font-medium">
+                                {completedCount} Completed / {ongoingCount} Ongoing
+                            </span>
                         </div>
-
                     </motion.div>
-
                 </div>
 
-                {/* Projects Grid Container - Ready for ProjectCard */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ delay: 1, duration: 0.6 }}
+                    transition={{ duration: 0.55, delay: 0.2 }}
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12"
                 >
-                    {/* ProjectCard components will go here */}
                     {projects.map((p, index) => (
                         <ProjectCard key={p.id || index} project={p} />
                     ))}
                 </motion.div>
-
-
             </motion.div>
-
         </div>
-
     );
-
 };
-
 
 export default Project;

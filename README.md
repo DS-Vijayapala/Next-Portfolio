@@ -68,9 +68,32 @@ Create `.env` in the project root:
 
 ```env
 NEXT_PUBLIC_WEB3FORMS_KEY=your_web3forms_access_key
+DATABASE_URL="mongodb://127.0.0.1:27017/portfolio_admin"
+AUTH_SECRET="your_long_random_secret"
+ADMIN_USERNAME="admin"
+ADMIN_PASSWORD="admin1234"
+
+# Cloudinary (project image uploads)
+CLOUDINARY_CLOUD_NAME="your_cloud_name"
+CLOUDINARY_API_KEY="your_api_key"
+CLOUDINARY_API_SECRET="your_api_secret"
+CLOUDINARY_FOLDER="portfolio/projects"
 ```
 
-Used by: `components/ContactMe/Contact.tsx` to submit the contact form.
+Used by:
+- `components/ContactMe/Contact.tsx` for contact form submission
+- Admin auth/session flow
+- Prisma MongoDB connection
+- Cloudinary image upload endpoint (`/api/admin/uploads`)
+
+## Cloudinary Image Upload Flow
+
+- In Admin `Add Project` / `Edit Project`, choose an image and click `Upload Image`.
+- The file is sent to `/api/admin/uploads` (protected route).
+- Server uploads the image to Cloudinary using signed upload.
+- Image is optimized with transformation (`q_auto:good,c_limit,w_1600`) for efficient delivery.
+- The optimized URL is added to the project image gallery (max 5 images).
+- Project details page renders a carousel from these images.
 
 ## Getting Started
 

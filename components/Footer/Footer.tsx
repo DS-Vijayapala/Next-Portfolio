@@ -1,6 +1,7 @@
 import React from 'react';
-import { Mail, Github, Linkedin, Heart } from 'lucide-react';
+import { Mail, Github, Linkedin, Heart, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Footer() {
 
@@ -122,6 +123,19 @@ function Footer() {
                                 transition-colors duration-300" />
 
                             </a>
+
+                            <Link
+                                href="/admin/login"
+                                className="group p-3 rounded-lg bg-slate-800/50 border
+                                 border-slate-700 hover:border-violet-500/50
+                                  hover:bg-violet-500/10 transition-all duration-300"
+                                aria-label="Admin Login"
+                            >
+
+                                <ShieldCheck className="w-5 h-5 text-slate-400 group-hover:text-violet-300 
+                                transition-colors duration-300" />
+
+                            </Link>
 
                         </div>
 

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Ovo, Geist } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/NavBar/NavBar";
-import Footer from "@/components/Footer/Footer";
-import PageTransitionLoader from "@/components/Loading/PageTransitionLoader";
 import SonnerProvider from "@/components/providers/SonnerProvider";
+import AppFrame from "@/components/layout/AppFrame";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -43,26 +41,7 @@ export default function RootLayout({
         className={`${outFit.className} ${ovo.className} antialiased leading-8 overflow-x-hidden 
         dark:bg-gray-900 dark:text-white`}
       >
-
-        <PageTransitionLoader>
-          <header>
-
-            <NavBar />
-
-          </header>
-
-          <main>
-
-            {children}
-
-          </main>
-
-          <footer>
-
-            <Footer />
-
-          </footer>
-        </PageTransitionLoader>
+        <AppFrame>{children}</AppFrame>
 
         <SonnerProvider />
 
