@@ -15,9 +15,24 @@ import {
 } from "@/components/ui/table";
 
 export default async function AdminDashboardPage() {
-  const [projects, totalCount, completedCount] = await Promise.all([
-    prisma.project.findMany(({
-      orderBy: { updatedAt: "desc" },
+  const [totalCount, completedCount] = await Promise.all([
+    prisma.project.count(),
+    prisma.project.count({ where: { projectStatus: true } }),
+  ]);
+
+  let sortOrderSupported = true;
+  let projects: Array<{
+    id: string;
+    title: string;
+    slug: string;
+    date: string;
+    projectStatus: boolean;
+    sortOrder?: number;
+  }> = [];
+
+  try {
+    projects = (await prisma.project.findMany({
+      orderBy: [{ sortOrder: "asc" }, { updatedAt: "desc" }],
       select: {
         id: true,
         title: true,
@@ -26,19 +41,33 @@ export default async function AdminDashboardPage() {
         projectStatus: true,
         sortOrder: true,
       },
-    } as never)) as Promise<
-      Array<{
-        id: string;
-        title: string;
-        slug: string;
-        date: string;
-        projectStatus: boolean;
-        sortOrder?: number;
-      }>
-    >,
-    prisma.project.count(),
-    prisma.project.count({ where: { projectStatus: true } }),
-  ]);
+    } as never)) as Array<{
+      id: string;
+      title: string;
+      slug: string;
+      date: string;
+      projectStatus: boolean;
+      sortOrder?: number;
+    }>;
+  } catch {
+    sortOrderSupported = false;
+    projects = (await prisma.project.findMany({
+      orderBy: { updatedAt: "desc" },
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        date: true,
+        projectStatus: true,
+      },
+    } as never)) as Array<{
+      id: string;
+      title: string;
+      slug: string;
+      date: string;
+      projectStatus: boolean;
+    }>;
+  }
 
   return (
     <section className="space-y-5">
@@ -145,14 +174,20 @@ export default async function AdminDashboardPage() {
           <CardTitle className="text-base">Project Display Order</CardTitle>
         </CardHeader>
         <CardContent>
-          <ProjectOrderManager
-            projects={projects.map((project) => ({
-              id: project.id,
-              title: project.title,
-              slug: project.slug,
-              sortOrder: project.sortOrder,
-            }))}
-          />
+          {sortOrderSupported ? (
+            <ProjectOrderManager
+              projects={projects.map((project) => ({
+                id: project.id,
+                title: project.title,
+                slug: project.slug,
+                sortOrder: project.sortOrder,
+              }))}
+            />
+          ) : (
+            <p className="text-sm text-amber-300">
+              Project ordering is temporarily unavailable. Run Prisma generate and restart the dev server.
+            </p>
+          )}
         </CardContent>
       </Card>
     </section>

@@ -64,16 +64,22 @@ export async function POST(request: Request) {
       );
     }
 
-    const latestProject = (await prisma.project.findFirst({
-      orderBy: { sortOrder: "desc" },
-      select: { sortOrder: true },
-    } as never)) as { sortOrder?: number } | null;
-    const nextSortOrder = (latestProject?.sortOrder ?? 0) + 1;
+    let sortOrderSupported = true;
+    let nextSortOrder = 1;
+
+    try {
+      const latestProject = (await prisma.project.findFirst({
+        orderBy: { sortOrder: "desc" },
+        select: { sortOrder: true },
+      } as never)) as { sortOrder?: number } | null;
+      nextSortOrder = (latestProject?.sortOrder ?? 0) + 1;
+    } catch {
+      sortOrderSupported = false;
+    }
 
     const createData = {
       title: body.title.trim(),
       slug,
-      sortOrder: nextSortOrder,
       shortDescription: body.shortDescription?.trim() || "",
       description: body.description,
       bgImage: images[0],
@@ -87,8 +93,12 @@ export async function POST(request: Request) {
       framework: body.framework?.trim() || "",
     };
 
+    const createPayload = sortOrderSupported
+      ? ({ ...createData, sortOrder: nextSortOrder } as const)
+      : createData;
+
     const created = await prisma.project.create({
-      data: createData as never,
+      data: createPayload as never,
     });
 
     return NextResponse.json({ success: true, project: created });

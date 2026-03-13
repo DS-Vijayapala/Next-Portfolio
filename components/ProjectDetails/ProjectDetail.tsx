@@ -181,25 +181,6 @@ const ProjectDetailPage = ({ project }: { project: Project }) => {
               />
             </div>
 
-            <div className="rounded-2xl border border-slate-700/70 bg-slate-800/35 p-6 backdrop-blur-sm sm:p-8">
-              <div className="mb-5 flex items-center gap-2.5">
-                <div className="rounded-lg border border-purple-500/25 bg-purple-500/10 p-2">
-                  <Code2 className="h-4 w-4 text-purple-400" />
-                </div>
-                <h2 className="text-xl font-semibold text-slate-100">Tech Stack</h2>
-              </div>
-
-              <div className="flex flex-wrap gap-2.5">
-                {technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="rounded-lg border border-slate-600/50 bg-slate-800/70 px-3 py-1.5 text-xs font-medium text-slate-200 transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
 
           <aside className="space-y-4 lg:col-span-2">
@@ -236,6 +217,26 @@ const ProjectDetailPage = ({ project }: { project: Project }) => {
                     Built with maintainable standards, scalable structure, and practical deployment focus.
                   </p>
                 </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-slate-700/70 bg-slate-800/35 p-5 backdrop-blur-sm">
+              <div className="mb-4 flex items-center gap-2.5">
+                <div className="rounded-lg border border-purple-500/25 bg-purple-500/10 p-2">
+                  <Code2 className="h-4 w-4 text-purple-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-100">Tech Stack</h3>
+              </div>
+
+              <div className="flex flex-wrap gap-2.5">
+                {technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="rounded-lg border border-slate-600/50 bg-slate-800/70 px-3 py-1.5 text-xs font-medium text-slate-200 transition-all duration-300 hover:border-violet-500/50 hover:bg-violet-500/10 hover:text-violet-300"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
             </div>
           </aside>
