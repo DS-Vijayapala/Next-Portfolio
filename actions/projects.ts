@@ -2,11 +2,11 @@ export const Projects = [
 
   {
     id: "project-z-job-portal",
-    title: "Zipher.lk",
+    title: "ZipherJobs",
     description: `
     <h2><b>Why I Chose This Project</b></h2>
     <p>
-      I developed <strong>Project Z</strong> to address the growing need for a centralized job and HRM platform. 
+      I developed <strong>Project ZipherJobs</strong> to address the growing need for a centralized job and HRM platform. 
       Many job portals lack real HR management integration, so I aimed to build a system connecting 
       job seekers and employers with automation, scalability, and cloud integration.
     </p>

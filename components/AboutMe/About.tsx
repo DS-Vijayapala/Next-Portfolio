@@ -17,25 +17,13 @@ const About = () => {
             py-20 overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"
         >
 
-            {/* Animated Background Particles */}
-
-            <div className="particles-background">
-
-                {Array.from({ length: 8 }).map((_, i) => (
-                    <div key={i} className={`particle particle-${i + 1}`}></div>
-                ))}
-
-            </div>
-
-            {/* Gradient Overlay */}
-
-            <div className="absolute inset-0 bg-gradient-to-b
-             from-slate-900/50 via-transparent to-slate-900/50
-              pointer-events-none"></div>
+            <div className="theme-bg-orb theme-bg-orb-1" />
+            <div className="theme-bg-orb theme-bg-orb-2" />
+            <div className="theme-bg-grid" />
 
             {/* Content */}
 
-            <div className="relative z-10 text-center">
+            <div className="relative z-10 text-center about-shell max-w-5xl mx-auto">
 
                 {/* Section Header */}
 
@@ -58,7 +46,7 @@ const About = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
-                        className="text-2xl sm:text-3xl font-bold bg-gradient-to-r
+                        className="text-xl sm:text-xl font-bold bg-gradient-to-r
                          from-white via-slate-200 to-slate-300 bg-clip-text text-transparent"
                     >
 
@@ -72,31 +60,23 @@ const About = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6 }}
-                        className="profile-image-container mx-auto mt-10 flex justify-center"
+                        className="about-hero-avatar mx-auto mt-10 flex justify-center"
                     >
+                        <div className="about-avatar-glow" />
 
-                        <div className="animated-border">
-
-                            <div className="profile-image-wrapper">
-
-                                <Image
-                                    src={assets.default_image}
-                                    alt="Dineth Profile"
-                                    className="profile-image"
-                                    width={80}
-                                    height={80}
-                                />
-
-                                <div className="profile-icon-badge">
-
-                                    <Code2 className="text-white w-6 h-6" />
-
-                                </div>
-
-                            </div>
-
+                        <div className="about-avatar-frame">
+                            <Image
+                                src={assets.default_image}
+                                alt="Dineth Profile"
+                                className="about-avatar-image"
+                                width={220}
+                                height={220}
+                            />
                         </div>
 
+                        <div className="about-avatar-chip">
+                            <Code2 className="text-white w-5 h-5" />
+                        </div>
                     </motion.div>
 
                     {/* Name and Title Box */}
@@ -106,8 +86,8 @@ const About = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                         className="mt-6 inline-block backdrop-blur-md
-                         bg-slate-800/40 border border-violet-500/20 rounded-xl
-                          px-3 py-1.5 shadow-lg shadow-violet-500/10"
+                         bg-slate-800/45 border border-violet-500/20 rounded-xl
+                          px-4 py-2 shadow-lg shadow-violet-500/15"
                     >
 
                         <h3 className="text-lg sm:text-xl font-semibold text-white">
@@ -139,11 +119,10 @@ const About = () => {
                     className="flex flex-col items-center"
                 >
 
-                    <div className="backdrop-blur-sm bg-slate-800/30 border border-slate-700/50
-                     rounded-2xl p-6 sm:p-8 mb-10 max-w-3xl">
+                    <div className="about-story-card p-6 sm:p-8 mb-10 max-w-3xl">
 
-                        <p className="font-mono text-sm sm:text-base leading-relaxed
-                         text-slate-300 text-center">
+                        <p className="text-sm sm:text-base leading-8
+                         text-slate-300 text-justify">
 
                             Hey there! I'm <strong className="text-violet-400 font-semibold">Dineth</strong> — a passionate
                             <strong className="text-violet-400 font-semibold"> Full Stack Developer </strong>
@@ -217,7 +196,7 @@ const About = () => {
                         transition={{ duration: 0.5, delay: 0.8 }}
                     >
 
-                        <h4 className="text-xl sm:text-2xl font-semibold text-slate-200 
+                        <h4 className="text-xl sm:text-xl font-semibold text-slate-200 
                         mb-6 flex items-center justify-center gap-2">
 
                             <span className="text-violet-400">Tech  Stack</span>
