@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 function getSafeNextPath(nextParam: string | null) {
   if (!nextParam || !nextParam.startsWith("/")) return "/admin/dashboard";
@@ -15,8 +15,12 @@ function getSafeNextPath(nextParam: string | null) {
 
 export default function LoginPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const nextPath = getSafeNextPath(searchParams.get("next"));
+  const [nextPath, setNextPath] = useState("/admin/dashboard");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setNextPath(getSafeNextPath(params.get("next")));
+  }, []);
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Loading from "./Loading";
 
 const INITIAL_DELAY_MS = 450;
@@ -13,12 +13,9 @@ export default function PageTransitionLoader({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const hasMountedRef = useRef(false);
   const cycleRef = useRef(0);
   const [isLoading, setIsLoading] = useState(true);
-
-  const routeKey = `${pathname}?${searchParams?.toString() ?? ""}`;
 
   useEffect(() => {
     cycleRef.current += 1;
@@ -33,7 +30,7 @@ export default function PageTransitionLoader({
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [routeKey]);
+  }, [pathname]);
 
   return (
     <>
