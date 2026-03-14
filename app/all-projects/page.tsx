@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Project from '@/components/Projects/Project'
 import React from 'react'
 import { prisma } from '@/lib/prisma'
